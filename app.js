@@ -844,7 +844,8 @@ function characterSheetPath() {
 
 function portraitImagePath(type = resultType, gender = characterGender) {
   if (!type) return "";
-  if (type.code === "HOST") return `assets/portraits/${gender}-host-v18-2x.png`;
+  if (type.code === "LAY") return `assets/portraits/${gender}-lay-v19-2x.png`;
+  if (type.code === "SEEK") return `assets/portraits/${gender}-seek-v19-2x.png`;
   return `assets/portraits/${gender}-${type.code.toLowerCase()}-2x.png`;
 }
 
@@ -960,7 +961,7 @@ function matchInviteText() {
 function updateSocialShareLinks() {
   if (!resultType) return;
   const url = matchInviteUrl();
-  const text = shareText();
+  const text = matchInviteText();
   const whatsapp = document.querySelector('[data-social-share="whatsapp"]');
   const facebook = document.querySelector('[data-social-share="facebook"]');
   if (whatsapp) whatsapp.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
@@ -968,7 +969,14 @@ function updateSocialShareLinks() {
 }
 
 async function copyText(text) {
-  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch (_) {
+      // Fall through for browsers that expose Clipboard API but deny access.
+    }
+  }
   const area = document.createElement("textarea");
   area.value = text;
   area.setAttribute("readonly", "");
@@ -1242,9 +1250,10 @@ document.querySelectorAll("[data-social-share]").forEach((control) => control.ad
   }
 }));
 $("copy-prompt-btn").addEventListener("click", async () => {
+  const noraWindow = window.open("https://vinobuzz.ai", "_blank", "noopener");
   await copyText(noraPromptText());
   track("vbti_nora_prompt_copy", { type: resultType.code, inferred_budget: inferredBudget });
-  toast("Nora 提示已複製");
+  toast(noraWindow ? "Nora 提示已複製，正在開啟 VinoBuzz.ai" : "Nora 提示已複製；請允許瀏覽器開啟 VinoBuzz.ai");
 });
 
 const landing = $("landing");
