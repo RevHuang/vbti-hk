@@ -1267,7 +1267,6 @@ $("retake-btn").addEventListener("click", resetQuiz);
 $("share-btn").addEventListener("click", shareResult);
 $("invite-btn").addEventListener("click", shareMatchInvite);
 $("match-share-btn").addEventListener("click", shareMatchInvite);
-$("download-btn").addEventListener("click", downloadCard);
 document.querySelectorAll(".character-choice").forEach((button) => button.addEventListener("click", () => applyCharacterGender(button.dataset.characterGender)));
 document.querySelectorAll("[data-social-share]").forEach((control) => control.addEventListener("click", async (event) => {
   const channel = control.dataset.socialShare;
