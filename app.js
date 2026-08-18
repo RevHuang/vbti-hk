@@ -228,6 +228,31 @@ const answerVisuals = [
   ["layers", "flame", "plate", "fish"], ["heart", "spark", "glass", "check"]
 ];
 
+// Mobile copy is intentionally editorial rather than auto-wrapped. Each item
+// contains one or two complete phrase rows so Cantonese never breaks mid-idea.
+const mobileQuestionCopy = [
+  "Friday 晚，你係邊種隊友？", "你最鍾意邊款飲品？", "今晚最想食乜？", "你鍾意飲邊種茶？",
+  "甜品你點揀？", "邊組香氣最吸引？", "拎起酒牌，你會先做乜？", "你鍾意幾酸爽？",
+  "帶酒去飯局，你會揀？", "餐廳點樣揀酒？", "收工後想飲邊種？", "神秘酒遞到面前，你會？",
+  "第一次約會食乜？", "飲幾杯後，你會變成？"
+];
+const mobileAnswerCopy = [
+  [["訂枱定時間","再幫手叫酒"],["遲到都要","搞氣氛"],["提議去間","新餐廳"],["留喺屋企","慢慢飲"]],
+  [["鮮檸梳打","多片檸檬"],["濃茶味","港式奶茶"],["齋啡","唔加糖"],["白桃凍茶"]],
+  [["刺身或生蠔"],["叉燒或燒鴨"],["黑椒牛扒"],["泰式咖喱","或打邊爐"]],
+  [["清淡花香"],["順滑平衡"],["濃茶","帶少少澀"],["加奶加糖","香濃順口"]],
+  [["唔食甜品","食芝士"],["食幾啖","就夠"],["楊枝甘露","或水果甜品"],["未睇主菜","先睇甜品"]],
+  [["柑橘皮","青蘋果"],["熟莓果","暖香料"],["花香白桃","香水感"],["香草泥土","煙燻"]],
+  [["先睇產區","年份酒莊"],["直接問人","推薦一支"],["揀最少見","最特別嗰杯"],["搵最穩陣","又抵飲"]],
+  [["愈凍愈酸","愈好"],["鍾意氣泡","但要柔和"],["間中可以","偏好順滑"],["麻麻哋","鍾意沉實酒體"]],
+  [["大家認得","嘅牌子"],["特別得嚟","有故事"],["氣泡酒","容易分享"],["先問主人家","幾條問題"]],
+  [["先睇食物","再揀配搭"],["揀支少見","未試過嘅酒"],["揀熟悉","多人接受"],["先格價","再揀最抵飲"]],
+  [["濃郁深色","有酒體"],["輕盈夠凍","夠清爽"],["柔和果香","飲落舒服"],["揀一支","未試過嘅酒"]],
+  [["飲咗先","之後再問"],["聞一聞","估完先問"],["飲之前","先問清楚"],["等人試完","再睇反應"]],
+  [["日式放題","輕鬆實際"],["屋企煮飯","夠用心"],["牛扒晚餐","氣氛行先"],["Omakase","交畀師傅"]],
+  [["飲大咗","講心事"],["愈飲愈精神","繼續乾杯"],["照樣慢慢飲","唔會亂嚟"],["飲水食嘢","夠鐘收手"]]
+];
+
 const types = [
   {
     code: "HOST", name: "飯局主理人", color: "#F2750A", cell: [0, 0], population: 5, rarity: "稀有角色", ratio: "約 20 人有 1 個",
@@ -594,7 +619,7 @@ function matchVerdict(score) {
 
 function showScreen(id) {
   screens.forEach((name) => $(name).classList.toggle("active", name === id));
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: matchMedia("(max-width: 650px)").matches ? "auto" : "smooth" });
 }
 
 function track(event, payload = {}) {
@@ -609,7 +634,9 @@ function renderQuestion() {
   $("progress-bar").parentElement?.setAttribute("aria-valuenow", current + 1);
   $("progress-bar").parentElement?.setAttribute("aria-valuemax", questions.length);
   $("question-kicker").textContent = q.kicker;
-  $("question-title").textContent = q.title;
+  const compactMobile = matchMedia("(max-width: 650px)").matches;
+  if (compactMobile) window.scrollTo({ top: 0, behavior: "auto" });
+  $("question-title").textContent = compactMobile ? mobileQuestionCopy[current] : q.title;
   $("question-note").textContent = q.note;
   $("question-section").textContent = `TASTE / ${String(current + 1).padStart(2, "0")}`;
   $("step-number").textContent = String(current + 1).padStart(2, "0");
@@ -619,7 +646,7 @@ function renderQuestion() {
   $("back-btn").style.visibility = current ? "visible" : "hidden";
   $("answers").innerHTML = q.answers.map((a, i) => `
     <button class="answer" data-index="${i}">
-      <span class="answer-copy"><span class="answer-key">${String.fromCharCode(65 + i)}</span><span><strong>${a.title}</strong><small>${a.sub}</small></span></span>
+      <span class="answer-copy"><span class="answer-key">${String.fromCharCode(65 + i)}</span><span><strong>${compactMobile ? mobileAnswerCopy[current][i].map((phrase) => `<span class="answer-phrase">${phrase}</span>`).join("") : a.title}</strong><small>${a.sub}</small></span></span>
       <span class="answer-visual">${iconSvg(answerVisuals[current][i], "answer-line-icon")}</span>
       <i class="answer-arrow">選擇 <span>→</span></i>
     </button>`).join("");
@@ -883,7 +910,7 @@ function renderResult() {
   $("result-backdrop-code").textContent = resultType.code;
   $("portrait-caption-name").textContent = resultType.name;
   $("result-name").textContent = resultType.name;
-  $("result-roast").textContent = resultType.roast;
+  $("result-roast").textContent = matchMedia("(max-width: 650px)").matches ? `${resultType.roast.split("。")[0]}。` : resultType.roast;
   $("result-population").textContent = `${resultType.population}%`;
   $("result-rarity").textContent = resultType.rarity;
   $("result-ratio").textContent = resultType.ratio;

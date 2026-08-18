@@ -670,3 +670,136 @@ html,body { background-color: var(--brand-canvas); }
     border-color: #E2E2DD;
   }
 }
+
+/* V24 — visual-first mobile edit. One screen per question, five essential
+   result moments, and explicitly authored phrase rows. */
+@media (max-width:650px) {
+  .quiz { padding-top: 72px; }
+  .quiz-shell { padding-top: 4px; }
+  .quiz-topline { margin-bottom: 10px; }
+  .question-card {
+    padding: 16px 13px 14px;
+    border-radius: 18px;
+  }
+  .question-kicker { font-size: 9px; letter-spacing: .03em; }
+  .question-card h2 {
+    margin: 5px 0 13px;
+    font-size: clamp(23px,6.4vw,26px);
+    line-height: 1.14;
+    letter-spacing: -.025em;
+  }
+  .question-card > p { display: none; }
+  .answers { gap: 8px; }
+  .answer {
+    min-height: 86px;
+    padding: 10px;
+    grid-template-columns: minmax(0,1fr) 42px;
+    gap: 7px;
+    border-radius: 14px;
+  }
+  .answer-copy { display: block; }
+  .answer strong {
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1.32;
+  }
+  .answer-phrase {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+  .answer-visual { width: 42px; height: 42px; border-radius: 50%; }
+  .answer-line-icon { width: 22px; height: 22px; }
+
+  .result-shell { width: calc(100% - 20px); padding: 10px 0 30px; }
+  .result-hero {
+    padding: 16px 13px;
+    gap: 14px;
+    border-radius: 18px;
+  }
+  .result-index,.result-scroll-cue { display: none !important; }
+  .result-intro { padding: 0; }
+  .result-intro .eyebrow { margin-bottom: 5px; font-size: 9px; }
+  .type-code { font-size: 10px; letter-spacing: .16em; }
+  .result-intro h2 {
+    margin: 4px 0 8px;
+    font-size: clamp(43px,13vw,54px);
+    line-height: 1;
+  }
+  .result-roast {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .population-pill { width: max-content; max-width: 100%; padding: 7px 10px; }
+  .population-pill strong { font-size: 25px; }
+  .population-pill small { display: none; }
+  .result-actions { margin-top: 12px; gap: 7px; }
+  .result-actions .button { min-height: 44px; padding: 8px 10px; font-size: 12px; }
+  #share-btn { min-height: 48px; padding-inline: 44px; }
+  .result-actions .retake { min-height: 32px; font-size: 12px; }
+  .character-visual { gap: 8px; }
+  .character-switcher { padding: 5px; }
+  .character-choice { min-height: 38px; font-size: 12px; }
+  .result-portrait-card { min-height: 320px; border-radius: 16px; }
+  .portrait-caption,.portrait-stamp { display: none; }
+
+  .insight-grid { gap: 10px; }
+  .truth-panel,.population-panel,.combo-panel,.brand-intro-panel,.all-types { display: none !important; }
+  .panel { padding: 17px 14px; border-radius: 16px; }
+  .panel-heading { padding-bottom: 10px; margin-bottom: 14px; }
+  .panel-heading small { display: none; }
+  .panel-heading h3 { font-size: 17px; }
+  .taste-bars { gap: 9px; }
+  .taste-row { grid-template-columns: 52px 1fr 44px; gap: 7px; }
+  .taste-row b,.taste-row small { font-size: 10px; }
+  .flavor-wheel-profile { margin-top: 13px; padding: 12px; }
+  .flavor-wheel-profile > div:first-child small,.flavor-wheel-profile > p { display: none; }
+  .flavor-wheel-chips { margin-top: 8px; }
+  .wine-lanes { gap: 7px; }
+  .wine-chip { padding: 9px 10px; font-size: 12px; }
+  .why-match { display: none; }
+
+  .squad-panel .panel-heading { margin-bottom: 10px; }
+  .squad-stage { min-height: 390px; }
+  .squad-self { top: 24px; }
+  .squad-self-avatar { width: 92px; height: 124px; }
+  .squad-self span { margin-top: 6px; }
+  .squad-self b { font-size: 12px; }
+  .squad-node { bottom: 28px !important; width: 78px; }
+  .squad-node-avatar { width: 52px; height: 68px; }
+  .squad-node b { font-size: 10px; }
+  .squad-node small { font-size: 8px; }
+  .squad-node-score { padding: 4px 6px; font-size: 9px; }
+  .squad-spotlight { padding: 15px; }
+  .squad-spotlight-top { padding-bottom: 10px; }
+  .squad-spotlight-top b { font-size: 36px; }
+  .squad-spotlight-person { grid-template-columns: 68px 1fr; gap: 12px; margin: 14px 0 12px; }
+  .squad-detail-avatar { width: 64px; height: 84px; }
+  .squad-spotlight-person h4 { font-size: 20px; }
+  #squad-detail-summary { display: none; }
+  .squad-spotlight > p {
+    min-height: 0;
+    margin: 12px 0;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .squad-bonus-preview { padding: 10px 12px; }
+  .squad-bonus-preview b { font-size: 14px; }
+  .match-share-button { min-height: 44px; margin-top: 12px; font-size: 12px; }
+  .match-social-row { margin-top: 8px; }
+  .match-social-row > span { display: none; }
+
+  .nora-panel { grid-template-columns: 48px 1fr; gap: 12px; align-items: center; }
+  .nora-orb { width: 48px; height: 48px; font-size: 20px; }
+  .nora-panel span { font-size: 9px; }
+  .nora-panel h3 { margin: 4px 0 10px; font-size: 0; }
+  .nora-panel h3::after { content: "等 Nora 幫你揀一支"; font-size: 20px; line-height: 1.25; }
+  .nora-panel p { display: none; }
+  .nora-actions .button { min-height: 44px; font-size: 11px; }
+}
