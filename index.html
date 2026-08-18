@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="description" content="答 14 條互動問題，搵出你嘅 VinoBuzz Taste Identity、口味指紋同適合你嘅酒款風格。">
+  <meta property="og:title" content="VBTI — 你係邊一種葡萄酒飲家？">
+  <meta property="og:description" content="答 14 條互動問題，搵出你嘅葡萄酒個性、口味輪廓同適合你嘅酒款風格。">
+  <meta property="og:type" content="website">
+  <title>VBTI — 你嘅葡萄酒口味個性</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Noto+Sans+HK:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=17.1">
+  <link rel="stylesheet" href="styles-artistic.css?v=17.1">
+  <link rel="stylesheet" href="styles-match.css?v=17.1">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <div class="ambient-shape shape-one" aria-hidden="true"></div>
+  <div class="ambient-shape shape-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="VBTI 主頁">
+      <span class="brand-mark">V</span>
+      <span>VBTI <small>VinoBuzz 呈獻</small></span>
+    </a>
+    <div class="header-note">唔識酒都玩得。</div>
+  </header>
+
+  <main id="app">
+    <section class="screen landing active" id="landing" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="friend-invite-banner" id="friend-invite-banner" hidden><span>FRIEND MATCH</span><b id="friend-invite-copy"></b></div>
+        <div class="eyebrow"><span></span> 葡萄酒口味個性測試</div>
+        <h1 id="hero-title">你嘅口味，<br><em>都有個性。</em></h1>
+        <p class="hero-sub">答 14 條簡單問題，睇吓你飲酒時係邊一類人，仲會搵出啱你嘅酒款風格。</p>
+        <div class="hero-actions">
+          <button class="button primary" id="start-btn">搵出我嘅 VBTI <span>→</span></button>
+          <span class="time-note">大約 90 秒</span>
+        </div>
+        <div class="proof-row">
+          <div><strong>9</strong><span>種飲酒個性</span></div>
+          <div><strong>6</strong><span>項真實味覺指標</span></div>
+          <div><strong>0</strong><span>葡萄酒知識要求</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-character-grid" aria-label="9 種 VBTI 飲酒個性角色">
+          <figure><img src="assets/portraits/female-host-2x.png" alt="飯局主理人"><figcaption>飯局主理人</figcaption></figure>
+          <figure><img src="assets/portraits/female-snap-2x.png" alt="相機飲先"><figcaption>相機飲先</figcaption></figure>
+          <figure><img src="assets/portraits/female-seek-2x.png" alt="冷門酒探員"><figcaption>冷門酒探員</figcaption></figure>
+          <figure><img src="assets/portraits/female-cell-2x.png" alt="酒單學霸"><figcaption>酒單學霸</figcaption></figure>
+          <figure><img src="assets/portraits/female-cozy-2x.png" alt="Chill住飲"><figcaption>Chill住飲</figcaption></figure>
+          <figure><img src="assets/portraits/female-deal-2x.png" alt="抵飲獵人"><figcaption>抵飲獵人</figcaption></figure>
+          <figure><img src="assets/portraits/female-gift-2x.png" alt="送禮神隊友"><figcaption>送禮神隊友</figcaption></figure>
+          <figure><img src="assets/portraits/female-vibe-2x.png" alt="氣氛酒鬼"><figcaption>氣氛酒鬼</figcaption></figure>
+          <figure><img src="assets/portraits/female-lay-2x.png" alt="躺卡"><figcaption>躺卡</figcaption></figure>
+        </div>
+        <div class="floating-tag tag-one">你嘅口味，<br><b>一次講清。</b></div>
+        <div class="floating-tag tag-two">好玩得嚟，<br><b>真係有用。</b></div>
+      </div>
+      <div class="personality-marquee" aria-hidden="true">
+        <div>飯局主理人 · 相機飲先 · 冷門酒探員 · 酒單學霸 · Chill住飲 · 抵飲獵人 · 送禮神隊友 · 氣氛酒鬼 · 躺卡 ·</div>
+        <div>飯局主理人 · 相機飲先 · 冷門酒探員 · 酒單學霸 · Chill住飲 · 抵飲獵人 · 送禮神隊友 · 氣氛酒鬼 · 躺卡 ·</div>
+      </div>
+      <div class="landing-footer">
+        <span>一個真正用得到嘅口味輪廓</span>
+        <span>與 MBTI® 並無關聯</span>
+      </div>
+    </section>
+
+    <section class="screen quiz" id="quiz" aria-live="polite">
+      <div class="quiz-shell">
+        <div class="quiz-topline">
+          <button class="text-button" id="back-btn" aria-label="上一題">← 上一題</button>
+          <div class="progress-wrap"><span id="progress-label">1 / 14</span><div class="progress" role="progressbar" aria-label="測試進度" aria-valuemin="1" aria-valuemax="14"><i id="progress-bar"></i></div></div>
+          <button class="text-button" id="restart-btn">重新開始</button>
+        </div>
+        <div class="quiz-layout">
+          <aside class="question-stage" id="question-stage" aria-hidden="true">
+            <div class="stage-card stage-card-back"></div>
+            <div class="stage-card stage-card-mid"></div>
+            <div class="stage-grid"></div>
+            <div class="stage-orbit orbit-a"></div>
+            <div class="stage-orbit orbit-b"></div>
+            <div class="step-number" id="step-number">01</div>
+            <div class="stage-icon" id="stage-icon"></div>
+            <p id="stage-copy">跟直覺揀就得。</p>
+            <div class="stage-signal"><span></span> TASTE SIGNAL</div>
+            <div class="progress-dots" id="progress-dots"></div>
+          </aside>
+          <div class="question-card" id="question-card">
+            <div class="question-meta"><span id="question-section">TASTE / 01</span><i></i><span>跟直覺揀</span></div>
+            <div class="question-kicker" id="question-kicker"></div>
+            <h2 id="question-title"></h2>
+            <p id="question-note"></p>
+            <div class="answers" id="answers"></div>
+          </div>
+        </div>
+        <p class="quiz-footnote">揀最似你嘅答案就得，冇標準答案。</p>
+      </div>
+    </section>
+
+    <section class="screen result" id="result">
+      <div class="result-shell">
+        <section class="result-hero" id="result-hero">
+          <div class="result-backdrop-code" id="result-backdrop-code" aria-hidden="true"></div>
+          <div class="result-index">VBTI — WINE IDENTITY / 2026</div>
+          <div class="result-intro">
+          <div class="eyebrow"><span></span> 你嘅 VBTI 係</div>
+          <div class="type-code" id="result-code"></div>
+          <h2 id="result-name"></h2>
+          <p class="result-roast" id="result-roast"></p>
+          <div class="population-pill"><strong id="result-population">24%</strong><span><b id="result-rarity">最常見角色</b><small id="result-ratio">差唔多每 4 人有 1 個</small></span></div>
+          <div class="result-actions">
+            <button class="button primary" id="share-btn">分享我嘅結果 <span>↗</span></button>
+            <button class="button invite-button" id="invite-btn">叫朋友做配對</button>
+            <button class="button secondary" id="download-btn">整張 IG Story 人格卡</button>
+            <button class="text-button retake" id="retake-btn">再測一次</button>
+          </div>
+          </div>
+
+          <div class="character-visual">
+            <div class="character-switcher" role="group" aria-label="選擇人物版本">
+              <span>揀你想顯示嘅角色</span>
+              <button type="button" class="character-choice active" data-character-gender="female" aria-pressed="true">女角色</button>
+              <button type="button" class="character-choice" data-character-gender="male" aria-pressed="false">男角色</button>
+            </div>
+            <div class="result-portrait-card" id="result-portrait-card">
+              <div class="portrait-halo halo-one"></div>
+              <div class="portrait-halo halo-two"></div>
+              <div class="portrait" id="result-portrait" role="img" aria-label="VBTI type character"></div>
+              <div class="portrait-stamp">VBTI<br><small>口味認證</small></div>
+              <div class="portrait-caption"><span>YOUR WINE ENERGY</span><b id="portrait-caption-name"></b></div>
+            </div>
+          </div>
+          <div class="result-scroll-cue">向下睇完整口味檔案 <span>↓</span></div>
+        </section>
+
+        <div class="insight-grid">
+          <article class="panel taste-panel">
+            <div class="panel-heading">
+              <div><span>01</span><h3>你嘅口味指紋</h3></div>
+              <small>Nora 應該記住嘅口味</small>
+            </div>
+            <div class="taste-bars" id="taste-bars"></div>
+            <div class="flavor-wheel-profile">
+              <div><b>葡萄酒風味輪偏好</b><small>WINE AROMA WHEEL</small></div>
+              <div class="flavor-wheel-chips" id="flavor-wheel-chips"></div>
+              <p id="flavor-wheel-copy"></p>
+            </div>
+          </article>
+
+          <article class="panel truth-panel">
+            <div class="panel-heading"><div><span>02</span><h3>點解呢個結果咁似你</h3></div></div>
+            <blockquote id="result-truth"></blockquote>
+            <div class="scene"><b>飯局上嘅你</b><p id="result-scene"></p></div>
+          </article>
+
+          <article class="panel match-panel">
+            <div class="panel-heading"><div><span>03</span><h3>啱你嘅酒款風格</h3></div><small>按你今次答案動態配對</small></div>
+            <div class="wine-lanes" id="wine-lanes"></div>
+            <p class="why-match" id="result-match"></p>
+          </article>
+
+          <article class="panel population-panel">
+            <div class="panel-heading"><div><span>04</span><h3>你呢種飲家有幾常見？</h3></div><small>VBTI 初始參考比例</small></div>
+            <div class="population-story">
+              <div class="population-number"><strong id="population-big">24%</strong><span id="population-rarity-copy">最常見角色</span></div>
+              <div><h4 id="population-ratio-copy">差唔多每 4 人有 1 個</h4><p id="population-why"></p></div>
+            </div>
+            <p class="population-note">呢個比例係按日常飲酒習慣設定嘅初始參考，唔代表香港人口統計。正式上線後，會用首 500–1,000 份有效結果再調整。</p>
+          </article>
+
+          <article class="panel squad-panel">
+            <div class="panel-heading"><div><span>05</span><h3>你嘅最佳飲酒小隊</h3></div><small>先認識佢，再睇你哋夾唔夾</small></div>
+            <div class="squad-experience">
+              <div class="squad-stage" id="squad-stage">
+                <div class="squad-orbit orbit-outer" aria-hidden="true"></div>
+                <div class="squad-orbit orbit-inner" aria-hidden="true"></div>
+                <div class="squad-self">
+                  <div class="squad-self-avatar" id="squad-self-avatar"></div>
+                  <span>你</span><b id="squad-self-name"></b>
+                </div>
+                <div class="squad-nodes" id="squad-nodes"></div>
+                <div class="squad-prompt">點一個角色<br>睇配對化學作用</div>
+              </div>
+              <div class="squad-spotlight" id="squad-spotlight" aria-live="polite">
+                <div class="squad-spotlight-top"><span id="squad-relation">GOOD TEAM</span><b id="squad-score">96%</b></div>
+                <div class="squad-spotlight-person"><div class="squad-detail-avatar" id="squad-detail-avatar"></div><div><small>你揀中嘅人物</small><h4 id="squad-detail-name"></h4><p id="squad-detail-summary"></p></div></div>
+                <div class="squad-meter"><i id="squad-meter-fill"></i></div>
+                <p id="squad-detail-reason"></p>
+                <div class="squad-bonus-preview" id="squad-bonus-preview"><span id="squad-summary-label">組隊加成解鎖</span><b id="squad-bonus-name"></b></div>
+              </div>
+            </div>
+            <button class="button match-share-button" id="match-share-btn">Send 畀朋友做測驗，睇吓你哋夾幾多</button>
+          </article>
+
+          <article class="panel friend-match-panel" id="friend-match-panel" hidden>
+            <div class="panel-heading"><div><span>06</span><h3>你同朋友嘅飲酒配對</h3></div><small>FRIEND MATCH RESULT</small></div>
+            <div class="versus-row"><div><small>你朋友</small><strong id="inviter-type-name"></strong></div><span>×</span><div><small>你</small><strong id="friend-result-name"></strong></div><b id="friend-match-score">88%</b></div>
+            <h4 id="friend-match-verdict"></h4>
+            <p id="friend-match-reason"></p>
+          </article>
+
+          <article class="panel combo-panel" id="combo-panel" aria-live="polite">
+            <div class="combo-lightning" id="combo-symbol" aria-hidden="true">＋</div>
+            <div>
+              <span id="combo-kicker">飲酒組隊加成 · 點上面角色可以切換</span>
+              <h3>同 <b id="combo-partner"></b> 一齊，<strong id="combo-action">解鎖：</strong></h3>
+              <h4 id="combo-name"></h4>
+              <p id="combo-ability"></p>
+            </div>
+          </article>
+
+          <article class="panel nora-panel">
+            <div class="nora-orb">N</div>
+            <div>
+              <span>你嘅口味輪廓已經準備好</span>
+              <h3 id="nora-prompt"></h3>
+              <p>儲存呢個口味輪廓，等 Nora 下次一開始就可以畀你更貼身嘅推薦。系統亦已經自動記低適合你嘅預算範圍。</p>
+              <button class="button light" id="copy-prompt-btn">複製我嘅 Nora 提示</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="all-types">
+          <div><span>同朋友比較</span><h3>9 種 VBTI 飲酒個性</h3></div>
+          <p>9 種人格比例合共 100%。睇吓你同朋友飲酒時會變成邊一類人。</p>
+          <div class="type-strip" id="type-strip"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <canvas id="share-canvas" width="1080" height="1920" hidden></canvas>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js?v=17.1"></script>
+</body>
+</html>
