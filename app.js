@@ -1101,140 +1101,155 @@ async function drawShareCard() {
     loadImage(portraitImagePath(resultType)),
     loadImage(portraitImagePath(bestMatchType))
   ]);
-  const combo = pairBonus(resultType.code, bestMatch.code);
-  const comboType = bestMatchType;
-  ctx.fillStyle = "#FFF9F2";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  const wash = ctx.createRadialGradient(820, 330, 20, 820, 330, 720);
-  wash.addColorStop(0, `${resultType.color}55`);
-  wash.addColorStop(.42, `${resultType.color}18`);
-  wash.addColorStop(1, "rgba(255,249,242,0)");
-  ctx.fillStyle = wash;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = "rgba(242,117,10,.07)";
-  for (let x = 0; x <= 1080; x += 90) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 1920); ctx.stroke(); }
-  for (let y = 0; y <= 1920; y += 90) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1080, y); ctx.stroke(); }
-  ctx.fillStyle = "rgba(242,117,10,.075)";
-  ctx.font = "800 280px Manrope, Arial";
-  ctx.fillText(resultType.code, 26, 410);
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "700 25px 'Noto Sans HK', Arial";
-  ctx.fillText("VBTI  /  VinoBuzz 葡萄酒口味個性", 62, 80);
+  const storyTaglines = {
+    HOST: "酒單一到手，全枱自然聽你話。",
+    SNAP: "未飲先影；支酒要靚，張相都要靚。",
+    SEEK: "越冷門越想試，撞酒先係樂趣。",
+    CELL: "飲之前做足功課，酒單難唔到你。",
+    COZY: "舒服慢飲，一杯陪你過成晚。",
+    DEAL: "最識用啱價錢，飲到超值好酒。",
+    GIFT: "送酒唔會失手，包裝同口味都到位。",
+    VIBE: "氣氛一到，第一個舉杯一定係你。",
+    LAY: "飲到中段，開始攬住朋友講心事。"
+  };
+  const W = canvas.width;
+  const H = canvas.height;
+  const roundedCard = (x, y, w, h, radius, fill, stroke = null, width = 1) => {
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, radius);
+    ctx.fillStyle = fill;
+    ctx.fill();
+    if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width; ctx.stroke(); }
+  };
+  const drawContained = (img, x, y, w, h, pad = 0) => {
+    const scale = Math.min((w - pad * 2) / img.width, (h - pad * 2) / img.height);
+    const dw = img.width * scale;
+    const dh = img.height * scale;
+    ctx.save();
+    ctx.globalCompositeOperation = "lighten";
+    ctx.drawImage(img, x + (w - dw) / 2, y + h - dh - pad, dw, dh);
+    ctx.restore();
+  };
+  const burst = (cx, cy, outer, inner, points, fill) => {
+    ctx.beginPath();
+    for (let i = 0; i < points * 2; i += 1) {
+      const angle = -Math.PI / 2 + (Math.PI * i) / points;
+      const radius = i % 2 ? inner : outer;
+      const x = cx + Math.cos(angle) * radius;
+      const y = cy + Math.sin(angle) * radius;
+      if (!i) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = fill;
+    ctx.fill();
+  };
+
+  // A bold poster backdrop with a physical-card silhouette.
   ctx.fillStyle = "#F2750A";
-  ctx.font = "700 20px Manrope, Arial";
-  ctx.fillText(`IDENTITY  /  ${resultType.code}`, 62, 148);
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "800 82px 'Noto Sans HK', Arial";
-  const titleY = wrapText(ctx, resultType.name, 62, 248, 610, 88, 2);
+  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "rgba(31,31,31,.12)";
+  for (let y = -W; y < H + W; y += 42) ctx.fillRect(0, y, W, 2);
   ctx.save();
-  ctx.beginPath();
-  ctx.roundRect(560, 160, 470, 620, 210);
-  ctx.clip();
-  ctx.fillStyle = "rgba(242,117,10,.08)";
-  ctx.fillRect(560, 160, 470, 620);
-  ctx.drawImage(resultImg, 515, 115, 565, 690);
-  ctx.restore();
-  const fade = ctx.createLinearGradient(0, 570, 0, 820);
-  fade.addColorStop(0, "rgba(255,249,242,0)");
-  fade.addColorStop(1, "#FFF9F2");
-  ctx.fillStyle = fade;
-  ctx.fillRect(470, 560, 610, 280);
-  ctx.fillStyle = "#625A53";
-  ctx.font = "400 28px 'Noto Sans HK', Arial";
-  wrapText(ctx, resultType.roast, 62, Math.max(490, titleY + 115), 545, 42, 5);
+  ctx.translate(540, 965);
+  ctx.rotate(-.024);
+  ctx.shadowColor = "rgba(31,31,31,.24)";
+  ctx.shadowBlur = 46;
+  ctx.shadowOffsetY = 28;
+  roundedCard(-454, -778, 908, 1556, 56, "#F7F7F2", "#1F1F1F", 5);
+  ctx.shadowColor = "transparent";
 
-  // Fun fact recap card
+  // Header strip and deliberately oversized identity typography.
+  roundedCard(-412, -734, 824, 78, 39, "#1F1F1F");
   ctx.fillStyle = "#FFFFFF";
-  ctx.beginPath();
-  ctx.roundRect(62, 830, 956, 220, 28);
-  ctx.fill();
-  ctx.fillStyle = "#F2750A";
-  ctx.font = "800 19px 'Noto Sans HK', Arial";
-  ctx.fillText("FUN FACT / 飯局上嘅你", 96, 884);
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "800 38px 'Noto Sans HK', Arial";
-  wrapText(ctx, resultType.scene, 96, 950, 850, 50, 3);
-
-  // Population card
-  ctx.fillStyle = "#F2750A";
-  ctx.beginPath();
-  ctx.roundRect(62, 1090, 300, 250, 28);
-  ctx.fill();
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "800 18px 'Noto Sans HK', Arial";
-  ctx.fillText("你呢類飲家佔", 96, 1140);
-  ctx.fillStyle = "#FFFFFF";
-  ctx.font = "900 82px Manrope, Arial";
-  ctx.fillText(`${resultType.population}%`, 96, 1230);
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "700 19px 'Noto Sans HK', Arial";
-  wrapText(ctx, `${resultType.rarity} · ${resultType.ratio}`, 96, 1280, 230, 30, 2);
-
-  // Best-match card with the matching character
-  ctx.fillStyle = "#FFFFFF";
-  ctx.beginPath();
-  ctx.roundRect(390, 1090, 628, 250, 28);
-  ctx.fill();
-  ctx.fillStyle = "#F2750A";
-  ctx.font = "800 18px Manrope, Arial";
-  ctx.fillText("BEST DRINKING MATCH", 424, 1140);
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "800 34px 'Noto Sans HK', Arial";
-  ctx.fillText(bestMatchType.name, 424, 1192);
-  ctx.fillStyle = "#F2750A";
-  ctx.font = "900 25px Manrope, Arial";
-  ctx.fillText(`${bestMatch.score}% MATCH`, 424, 1232);
-  ctx.fillStyle = "#625A53";
-  ctx.font = "500 18px 'Noto Sans HK', Arial";
-  wrapText(ctx, bestMatchType.squadSummary, 424, 1272, 360, 27, 2);
-  ctx.save();
-  ctx.beginPath();
-  ctx.roundRect(820, 1112, 170, 205, 24);
-  ctx.clip();
-  ctx.fillStyle = "#FFF0E2";
-  ctx.fillRect(820, 1112, 170, 205);
-  ctx.drawImage(bestMatchImg, 802, 1100, 205, 220);
-  ctx.restore();
-
-  // Team bonus keeps the previously promised special effect without crowding the recap
-  ctx.fillStyle = "#FFE8D3";
-  ctx.beginPath();
-  ctx.roundRect(62, 1380, 956, 205, 28);
-  ctx.fill();
-  ctx.strokeStyle = "#F2750A";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-  ctx.fillStyle = "#F2750A";
-  ctx.font = "800 18px 'Noto Sans HK', Arial";
-  ctx.fillText(`組隊加成 / 同 ${comboType.name} 一齊`, 96, 1430);
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "800 38px 'Noto Sans HK', Arial";
-  wrapText(ctx, combo.name, 96, 1485, 840, 46, 2);
-  ctx.fillStyle = "#625A53";
-  ctx.font = "500 19px 'Noto Sans HK', Arial";
-  wrapText(ctx, combo.ability, 96, 1540, 850, 29, 2);
-
-  // Friend invitation block
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "900 38px 'Noto Sans HK', Arial";
-  ctx.fillText("你同我係神隊友，定飲酒災難現場？", 62, 1685);
-  ctx.fillStyle = "#F2750A";
-  ctx.font = "800 24px 'Noto Sans HK', Arial";
-  ctx.fillText("做埋 VBTI，完成後即睇我哋嘅 Matching Level", 62, 1735);
-  ctx.fillStyle = "#FFFFFF";
-  ctx.beginPath();
-  ctx.roundRect(62, 1780, 956, 82, 20);
-  ctx.fill();
-  ctx.fillStyle = "#1F1F1F";
-  ctx.font = "600 19px Manrope, Arial";
-  ctx.fillText(`vbti.vinobuzz.ai/?friend=${resultType.code}`, 92, 1830);
-  ctx.fillStyle = "#8F8F8F";
-  ctx.textAlign = "right";
-  ctx.fillText(`FRIEND CODE / ${resultType.code}`, 985, 1830);
+  ctx.font = "800 23px Inter, Arial";
   ctx.textAlign = "left";
-  ctx.fillStyle = "#777777";
-  ctx.font = "600 15px Manrope, Arial";
-  ctx.fillText("VBTI · VinoBuzz Taste Identity", 62, 1892);
+  ctx.fillText("VinoBuzz  /  VBTI", -376, -684);
+  ctx.textAlign = "right";
+  ctx.fillText(`TYPE ${resultType.code}`, 376, -684);
+
+  ctx.textAlign = "center";
+  ctx.fillStyle = "#1F1F1F";
+  ctx.font = "800 25px 'Noto Sans HK', Arial";
+  ctx.fillText("我嘅飲酒人格係", 0, -572);
+  ctx.font = "900 88px 'Noto Sans HK', Arial";
+  wrapText(ctx, resultType.name, 0, -470, 760, 96, 2);
+
+  // Main visual: full-body character framed like a collectible card.
+  roundedCard(-340, -324, 680, 720, 330, "#1F1F1F");
+  ctx.save();
+  ctx.beginPath();
+  ctx.roundRect(-340, -324, 680, 720, 330);
+  ctx.clip();
+  ctx.fillStyle = "#1F1F1F";
+  ctx.fillRect(-340, -324, 680, 720);
+  drawContained(resultImg, -300, -294, 600, 674, 8);
+  ctx.restore();
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = "#1F1F1F";
+  ctx.beginPath();
+  ctx.roundRect(-340, -324, 680, 720, 330);
+  ctx.stroke();
+
+  // Playful stickers replace report-like content blocks.
+  ctx.save();
+  ctx.translate(-320, -195);
+  ctx.rotate(-.16);
+  burst(0, 0, 112, 84, 14, "#F2750A");
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "900 39px Inter, Arial";
+  ctx.textAlign = "center";
+  ctx.fillText(`${resultType.population}%`, 0, -3);
+  ctx.font = "800 17px 'Noto Sans HK', Arial";
+  ctx.fillText("飲家同類", 0, 27);
+  ctx.restore();
+
+  ctx.save();
+  ctx.translate(332, 288);
+  ctx.rotate(.105);
+  roundedCard(-142, -55, 284, 110, 24, "#FFFFFF", "#1F1F1F", 4);
+  ctx.fillStyle = "#F2750A";
+  ctx.font = "900 22px Inter, Arial";
+  ctx.textAlign = "center";
+  ctx.fillText(`${bestMatch.score}% MATCH`, 0, -10);
+  ctx.fillStyle = "#1F1F1F";
+  ctx.font = "800 20px 'Noto Sans HK', Arial";
+  ctx.fillText(bestMatchType.name, 0, 27);
+  ctx.restore();
+
+  // One short personality line, presented as a pull quote rather than a report.
+  ctx.fillStyle = "#1F1F1F";
+  ctx.textAlign = "center";
+  ctx.font = "900 34px 'Noto Sans HK', Arial";
+  wrapText(ctx, `「${storyTaglines[resultType.code]}」`, 0, 502, 750, 50, 2);
+
+  // Tiny matching-character token adds fun and a clear friend-share cue.
+  roundedCard(-382, 620, 764, 106, 28, "#F2750A");
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(-320, 673, 42, 0, Math.PI * 2);
+  ctx.clip();
+  ctx.fillStyle = "#1F1F1F";
+  ctx.fillRect(-362, 631, 84, 84);
+  drawContained(bestMatchImg, -357, 635, 74, 78, 0);
+  ctx.restore();
+  ctx.fillStyle = "#FFFFFF";
+  ctx.textAlign = "left";
+  ctx.font = "900 27px 'Noto Sans HK', Arial";
+  ctx.fillText("你係邊一種？一齊睇配對", -256, 666);
+  ctx.font = "700 18px Inter, Arial";
+  ctx.fillText(`revhuang.github.io/vbti-hk/?friend=${resultType.code}`, -256, 698);
+  ctx.restore();
+
+  // Loose marks outside the card make the export feel like a social poster.
+  ctx.fillStyle = "#FFFFFF";
+  ctx.font = "900 58px Inter, Arial";
+  ctx.textAlign = "center";
+  ctx.fillText("✦", 84, 150);
+  ctx.fillText("↗", 978, 348);
+  ctx.fillText("✦", 972, 1660);
+  ctx.font = "900 26px Inter, Arial";
+  ctx.fillText("DRINK DIFFERENT", W / 2, 1884);
+  ctx.textAlign = "left";
   return canvas;
 }
 

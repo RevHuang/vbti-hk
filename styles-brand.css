@@ -209,6 +209,33 @@ body { color: var(--brand-black); font-size: 16px; line-height: 1.5; }
   .insight-grid { gap: 12px; margin-top: 12px; }
 }
 
+/* V26 — labels stay optically centred while directional icons sit in their
+   own fixed edge slot. This prevents the icon width shifting the copy. */
+#start-btn,
+#share-btn,
+#copy-prompt-btn {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+#start-btn > span,
+#share-btn > span,
+#copy-prompt-btn > span {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+}
+@media (max-width:650px) {
+  #start-btn,
+  #share-btn,
+  #copy-prompt-btn { padding-inline: 48px; }
+  #start-btn > span,
+  #share-btn > span,
+  #copy-prompt-btn > span { right: 18px; }
+}
+
 /* V19 — apply every annotated PDF comment to its exact target. */
 #share-btn,.match-share-button { justify-content: center; gap: 10px; text-align: center; }
 .bar-track,.bar-track i { border-radius: 999px; }
