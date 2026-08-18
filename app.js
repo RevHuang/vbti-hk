@@ -846,6 +846,7 @@ function portraitImagePath(type = resultType, gender = characterGender) {
   if (!type) return "";
   if (type.code === "LAY") return `assets/portraits/${gender}-lay-v19-2x.png`;
   if (type.code === "SEEK") return `assets/portraits/${gender}-seek-v19-2x.png`;
+  if (type.code === "COZY") return `assets/portraits/${gender}-cozy-v20-2x.png`;
   return `assets/portraits/${gender}-${type.code.toLowerCase()}-2x.png`;
 }
 
@@ -972,7 +973,7 @@ async function copyText(text) {
   if (navigator.clipboard && window.isSecureContext) {
     try {
       await navigator.clipboard.writeText(text);
-      return;
+      return true;
     } catch (_) {
       // Fall through for browsers that expose Clipboard API but deny access.
     }
@@ -984,8 +985,9 @@ async function copyText(text) {
   area.style.opacity = "0";
   document.body.appendChild(area);
   area.select();
-  document.execCommand("copy");
+  const copied = document.execCommand("copy");
   area.remove();
+  return copied;
 }
 
 async function shareResult() {
@@ -1250,10 +1252,18 @@ document.querySelectorAll("[data-social-share]").forEach((control) => control.ad
   }
 }));
 $("copy-prompt-btn").addEventListener("click", async () => {
-  const noraWindow = window.open("https://vinobuzz.ai", "_blank", "noopener");
-  await copyText(noraPromptText());
+  const noraWindow = window.open("about:blank", "_blank");
+  if (noraWindow) noraWindow.opener = null;
+  const copied = await copyText(noraPromptText());
+  if (!copied) {
+    if (noraWindow) noraWindow.close();
+    toast("未能自動複製提示，請再試一次");
+    return;
+  }
   track("vbti_nora_prompt_copy", { type: resultType.code, inferred_budget: inferredBudget });
-  toast(noraWindow ? "Nora 提示已複製，正在開啟 VinoBuzz.ai" : "Nora 提示已複製；請允許瀏覽器開啟 VinoBuzz.ai");
+  toast("Nora 提示已複製，正在開啟 VinoBuzz.ai");
+  if (noraWindow) noraWindow.location.replace("https://vinobuzz.ai");
+  else window.location.assign("https://vinobuzz.ai");
 });
 
 const landing = $("landing");

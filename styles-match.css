@@ -690,30 +690,6 @@ body { color: #1F1F1F; background: #fffaf5; }
   .flavor-wheel-chips span { padding:8px 10px; }
 }
 
-/* V19 — apply every annotated PDF comment to its exact target. */
-#share-btn,.match-share-button { justify-content: center; gap: 10px; text-align: center; }
-.bar-track,.bar-track i { border-radius: 999px; }
-.match-social-row { justify-content: center; margin-top: 12px; }
-
-@media (max-width:650px) {
-  .question-stage {
-    min-height: 116px;
-    padding: 16px;
-    grid-template-columns: 52px minmax(0,1fr);
-    grid-template-rows: auto auto;
-    align-items: center;
-    gap: 8px 12px;
-    border-radius: 22px;
-  }
-  .question-stage .stage-icon { width: 52px; height: 52px; grid-column: 1; grid-row: 1 / 3; }
-  .question-stage > p { grid-column: 2; grid-row: 1; align-self: end; margin: 0; font-size: 14px; line-height: 1.5; font-weight: 650; }
-  .question-stage .progress-dots { grid-column: 2; grid-row: 2; align-self: start; width: 100%; justify-content: flex-start; gap: 5px; }
-  .question-stage .step-number,.question-stage .stage-orbit,.question-stage .stage-signal { display: none; }
-  .stage-line-icon { width: 28px; height: 28px; }
-  .match-social-row { flex-wrap: wrap; }
-  .match-social-row > span { flex-basis: 100%; margin: 0 0 2px; text-align: center; }
-}
-
 /* V18 feedback pass — brand system, cleaner hierarchy and shared interaction states. */
 .brand { gap: 12px; }
 .brand img { display: block; width: clamp(126px, 11vw, 164px); height: 38px; object-fit: contain; }
