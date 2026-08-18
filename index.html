@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
-  <meta name="theme-color" content="#1A1A1A">
+  <meta name="theme-color" content="#1F1F1F">
   <meta name="description" content="答 14 條互動問題，搵出你嘅 VinoBuzz Taste Identity、口味指紋同適合你嘅酒款風格。">
   <meta property="og:title" content="VBTI — 你係邊一種葡萄酒飲家？">
   <meta property="og:description" content="答 14 條互動問題，搵出你嘅葡萄酒個性、口味輪廓同適合你嘅酒款風格。">
   <meta property="og:type" content="website">
   <title>VBTI — 你嘅葡萄酒口味個性</title>
+  <link rel="icon" href="assets/vinobuzz-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=Noto+Sans+HK:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17.1">
-  <link rel="stylesheet" href="styles-artistic.css?v=17.1">
-  <link rel="stylesheet" href="styles-match.css?v=17.1">
+  <link rel="stylesheet" href="styles.css?v=18.0">
+  <link rel="stylesheet" href="styles-artistic.css?v=18.0">
+  <link rel="stylesheet" href="styles-match.css?v=18.0">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -24,9 +25,9 @@
   <div class="ambient-shape shape-one" aria-hidden="true"></div>
   <div class="ambient-shape shape-two" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="VBTI 主頁">
-      <span class="brand-mark">V</span>
-      <span>VBTI <small>VinoBuzz 呈獻</small></span>
+    <a class="brand" href="https://vinobuzz.ai" target="_blank" rel="noopener" aria-label="前往 VinoBuzz">
+      <img src="assets/vinobuzz-logo.png" alt="VinoBuzz">
+      <span class="brand-product">VBTI</span>
     </a>
     <div class="header-note">唔識酒都玩得。</div>
   </header>
@@ -36,7 +37,7 @@
       <div class="hero-copy">
         <div class="friend-invite-banner" id="friend-invite-banner" hidden><span>FRIEND MATCH</span><b id="friend-invite-copy"></b></div>
         <div class="eyebrow"><span></span> 葡萄酒口味個性測試</div>
-        <h1 id="hero-title">你嘅口味，<br><em>都有個性。</em></h1>
+        <h1 id="hero-title"><span>你嘅口味</span><em>都有個性。</em></h1>
         <p class="hero-sub">答 14 條簡單問題，睇吓你飲酒時係邊一類人，仲會搵出啱你嘅酒款風格。</p>
         <div class="hero-actions">
           <button class="button primary" id="start-btn">搵出我嘅 VBTI <span>→</span></button>
@@ -52,7 +53,7 @@
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
         <div class="hero-character-grid" aria-label="9 種 VBTI 飲酒個性角色">
-          <figure><img src="assets/portraits/female-host-2x.png" alt="飯局主理人"><figcaption>飯局主理人</figcaption></figure>
+          <figure><img src="assets/portraits/female-host-v18-2x.png" alt="飯局主理人"><figcaption>飯局主理人</figcaption></figure>
           <figure><img src="assets/portraits/female-snap-2x.png" alt="相機飲先"><figcaption>相機飲先</figcaption></figure>
           <figure><img src="assets/portraits/female-seek-2x.png" alt="冷門酒探員"><figcaption>冷門酒探員</figcaption></figure>
           <figure><img src="assets/portraits/female-cell-2x.png" alt="酒單學霸"><figcaption>酒單學霸</figcaption></figure>
@@ -123,6 +124,13 @@
             <button class="button invite-button" id="invite-btn">叫朋友做配對</button>
             <button class="button secondary" id="download-btn">整張 IG Story 人格卡</button>
             <button class="text-button retake" id="retake-btn">再測一次</button>
+          </div>
+          <div class="social-share-row" aria-label="分享結果到社交平台">
+            <span>分享去</span>
+            <a href="#" data-social-share="whatsapp" aria-label="分享到 WhatsApp" title="WhatsApp">WA</a>
+            <a href="#" data-social-share="facebook" aria-label="分享到 Facebook" title="Facebook">f</a>
+            <a href="https://www.instagram.com/vinobuzz.hk/" target="_blank" rel="noopener" data-social-share="instagram" aria-label="前往 VinoBuzz Instagram" title="Instagram">IG</a>
+            <button type="button" data-social-share="wechat" aria-label="複製連結到 WeChat" title="WeChat">微</button>
           </div>
           </div>
 
@@ -219,13 +227,24 @@
             </div>
           </article>
 
+          <article class="panel brand-intro-panel">
+            <div class="brand-intro-heading"><span>由測驗去到真正揀酒</span><h3>Nora 同 VinoBuzz 係咩？</h3></div>
+            <div class="brand-intro-grid">
+              <div><b>N</b><h4>Nora</h4><p>VinoBuzz 嘅 AI 葡萄酒助手。佢會記住你嘅口味、預算同場合，用簡單說話幫你揀到一支真正適合嘅酒。</p></div>
+              <div><img src="assets/vinobuzz-logo.png" alt="VinoBuzz"><h4>VinoBuzz</h4><p>香港葡萄酒探索平台，將真實酒款、庫存同個人化建議連埋一齊，令揀酒唔再靠估。</p></div>
+            </div>
+          </article>
+
           <article class="panel nora-panel">
             <div class="nora-orb">N</div>
             <div>
               <span>你嘅口味輪廓已經準備好</span>
               <h3 id="nora-prompt"></h3>
               <p>儲存呢個口味輪廓，等 Nora 下次一開始就可以畀你更貼身嘅推薦。系統亦已經自動記低適合你嘅預算範圍。</p>
-              <button class="button light" id="copy-prompt-btn">複製我嘅 Nora 提示</button>
+              <div class="nora-actions">
+                <button class="button light" id="copy-prompt-btn">複製我嘅 Nora 提示</button>
+                <a class="button nora-link" href="https://vinobuzz.ai" target="_blank" rel="noopener">去 VinoBuzz 問 Nora <span>↗</span></a>
+              </div>
             </div>
           </article>
         </div>
@@ -241,6 +260,6 @@
 
   <canvas id="share-canvas" width="1080" height="1920" hidden></canvas>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=17.1"></script>
+  <script src="app.js?v=18.0"></script>
 </body>
 </html>

@@ -230,7 +230,7 @@ const answerVisuals = [
 
 const types = [
   {
-    code: "HOST", name: "飯局主理人", color: "#E96B14", cell: [0, 0], population: 5, rarity: "稀有角色", ratio: "約 20 人有 1 個",
+    code: "HOST", name: "飯局主理人", color: "#F2750A", cell: [0, 0], population: 5, rarity: "稀有角色", ratio: "約 20 人有 1 個",
     populationWhy: "肯幫成枱人揀酒、仲敢拍板嘅人唔多，所以你比較少見。",
     proto: { body: 72, fresh: 50, tannin: 65, sweet: 22, aroma: 55, discovery: 58, social: 88, control: 82, value: 42, care: 64 },
     roast: "成枱人都話冇所謂，最後一定係你拍板。你會睇食物、預算同大家口味，再揀一支最穩陣嘅酒。",
@@ -242,7 +242,7 @@ const types = [
     prompt: "幫我揀一支有結構、適合配餐嘅酒。我鍾意乾身、酒體較豐滿、帶鹹香層次同明顯單寧嘅風格。"
   },
   {
-    code: "SNAP", name: "相機飲先", color: "#E96B14", cell: [1, 0], population: 15, rarity: "常見角色", ratio: "大約每 7 人有 1 個",
+    code: "SNAP", name: "相機飲先", color: "#F2750A", cell: [1, 0], population: 15, rarity: "常見角色", ratio: "大約每 7 人有 1 個",
     populationWhy: "好多人揀酒都會先睇酒標同賣相，所以呢類飲家幾常見。",
     proto: { body: 38, fresh: 72, tannin: 24, sweet: 44, aroma: 82, discovery: 55, social: 86, control: 34, value: 28, care: 42 },
     roast: "支酒未開，你已經睇緊酒標、酒色同現場光線。對你嚟講，好飲重要，好睇都一樣重要。",
@@ -254,7 +254,7 @@ const types = [
     prompt: "幫我揀一支優雅、香氣突出又上鏡嘅酒。要清新、精緻，而且容易同朋友一齊享受。"
   },
   {
-    code: "SEEK", name: "冷門酒探員", color: "#E96B14", cell: [2, 0], population: 7, rarity: "少數派", ratio: "大約每 14 人有 1 個",
+    code: "SEEK", name: "冷門酒探員", color: "#F2750A", cell: [2, 0], population: 7, rarity: "少數派", ratio: "大約每 14 人有 1 個",
     populationWhy: "大部分人會揀熟悉嘅酒，主動試冷門葡萄同新產區嘅人始終較少。",
     proto: { body: 55, fresh: 65, tannin: 46, sweet: 22, aroma: 46, discovery: 88, social: 70, control: 32, value: 24, care: 32 },
     roast: "愈少人聽過嘅酒，你愈想試。熟悉嘅酒夠穩陣，但新口味先令你興奮。",
@@ -266,7 +266,7 @@ const types = [
     prompt: "用一支有個性、較少見嘅酒畀我驚喜。我鍾意清新活力、鹹香細節同特別葡萄品種，多過單純追求名牌。"
   },
   {
-    code: "CELL", name: "酒單學霸", color: "#E96B14", cell: [3, 0], population: 3, rarity: "極稀有", ratio: "約 33 人先有 1 個",
+    code: "CELL", name: "酒單學霸", color: "#F2750A", cell: [3, 0], population: 3, rarity: "極稀有", ratio: "約 33 人先有 1 個",
     populationWhy: "會認真研究年份、產區同酒莊嘅人始終係少數。",
     proto: { body: 78, fresh: 42, tannin: 78, sweet: 10, aroma: 44, discovery: 32, social: 46, control: 88, value: 48, care: 46 },
     roast: "你會睇年份、產區同酒莊，推薦得好都要講得出原因。對你嚟講，飲酒係享受，亦係研究。",
@@ -278,7 +278,7 @@ const types = [
     prompt: "推薦一支認真、經典、乾身嘅紅酒，要有紮實結構、深度，同埋可靠產區或酒莊風格。唔需要花巧。"
   },
   {
-    code: "COZY", name: "Chill住飲", color: "#E96B14", cell: [0, 1], population: 14, rarity: "常見角色", ratio: "大約每 7 人有 1 個",
+    code: "COZY", name: "Chill住飲", color: "#F2750A", cell: [0, 1], population: 14, rarity: "常見角色", ratio: "大約每 7 人有 1 個",
     populationWhy: "唔少人飲酒只係想放鬆，屋企慢慢飲就最舒服。",
     proto: { body: 58, fresh: 36, tannin: 28, sweet: 58, aroma: 74, discovery: 28, social: 22, control: 58, value: 40, care: 38 },
     roast: "你飲酒係為咗放鬆，唔係上堂。柔和、果味夠、容易入口，就最啱你。",
@@ -290,7 +290,7 @@ const types = [
     prompt: "幫我揀一支適合安靜一晚、柔和舒服嘅酒。我鍾意果味充足、單寧低，唔要太尖銳或者太進取。"
   },
   {
-    code: "DEAL", name: "抵飲獵人", color: "#E96B14", cell: [1, 1], population: 17, rarity: "常見角色", ratio: "大約每 6 人有 1 個",
+    code: "DEAL", name: "抵飲獵人", color: "#F2750A", cell: [1, 1], population: 17, rarity: "常見角色", ratio: "大約每 6 人有 1 個",
     populationWhy: "好多人買酒都會先問值唔值，所以性價比派非常常見。",
     proto: { body: 56, fresh: 55, tannin: 45, sweet: 22, aroma: 52, discovery: 38, social: 70, control: 84, value: 98, care: 38 },
     roast: "你想飲好酒，但唔想為名氣畀多幾百蚊。搵到又平又好飲嗰支，你會特別有成功感。",
@@ -302,7 +302,7 @@ const types = [
     prompt: "幫我搵最抵飲嘅酒，唔係純粹最平。我想要平衡、容易配餐、有真實個性，而且少啲名氣溢價。"
   },
   {
-    code: "GIFT", name: "送禮神隊友", color: "#E96B14", cell: [2, 1], population: 9, rarity: "特定場合型", ratio: "大約每 11 人有 1 個",
+    code: "GIFT", name: "送禮神隊友", color: "#F2750A", cell: [2, 1], population: 9, rarity: "特定場合型", ratio: "大約每 11 人有 1 個",
     populationWhy: "呢類人平時未必成日買酒，但一到送禮就會特別認真。",
     proto: { body: 65, fresh: 52, tannin: 54, sweet: 20, aroma: 60, discovery: 30, social: 70, control: 88, value: 42, care: 100 },
     roast: "你揀酒最重視對方收到開唔開心。要啱場合、有體面，最好仲睇得出你有花心思。",
@@ -314,7 +314,7 @@ const types = [
     prompt: "幫我揀一支有體面又有心思嘅禮物酒。喺預算內優先考慮有認受性嘅質素、優雅外觀同廣泛接受度。"
   },
   {
-    code: "VIBE", name: "氣氛酒鬼", color: "#E96B14", cell: [3, 1], population: 20, rarity: "最常見角色", ratio: "大約每 5 人有 1 個",
+    code: "VIBE", name: "氣氛酒鬼", color: "#F2750A", cell: [3, 1], population: 20, rarity: "最常見角色", ratio: "大約每 5 人有 1 個",
     populationWhy: "最多人飲酒都係為咗朋友同氣氛，唔係為咗研究酒。",
     proto: { body: 52, fresh: 58, tannin: 38, sweet: 42, aroma: 52, discovery: 52, social: 98, control: 12, value: 48, care: 22 },
     roast: "枱面有乜你就飲乜，酒名記唔記得都冇所謂。你係氣氛小組，永遠第一個叫成枱人 Cheers。",
@@ -326,7 +326,7 @@ const types = [
     prompt: "幫我揀一支容易入口、夠百搭、適合成班朋友一齊 Cheers 嘅酒。唔使太複雜，最緊要大家都飲得開心。"
   },
   {
-    code: "LAY", name: "躺卡", color: "#E96B14", cell: [0, 2], population: 10, rarity: "每圍都有機會出現", ratio: "大約每 10 人有 1 個",
+    code: "LAY", name: "躺卡", color: "#F2750A", cell: [0, 2], population: 10, rarity: "每圍都有機會出現", ratio: "大約每 10 人有 1 個",
     populationWhy: "唔係人人都飲得多；一班朋友入面，通常總有一個最早要休息。",
     proto: { body: 42, fresh: 55, tannin: 25, sweet: 58, aroma: 62, discovery: 42, social: 88, control: 12, value: 45, care: 96 },
     roast: "你通常最早話要抖一抖，嚴重時仲要朋友照顧。不過你飲咗酒特別真心，會畀足情緒價值，仲可能突然同朋友酒後吐真情。",
@@ -620,7 +620,7 @@ function renderQuestion() {
   $("answers").innerHTML = q.answers.map((a, i) => `
     <button class="answer" data-index="${i}">
       <span class="answer-copy"><span class="answer-key">${String.fromCharCode(65 + i)}</span><span><strong>${a.title}</strong><small>${a.sub}</small></span></span>
-      <span class="answer-visual">${iconSvg(answerVisuals[current][i], "answer-line-icon")}<small>0${i + 1}</small></span>
+      <span class="answer-visual">${iconSvg(answerVisuals[current][i], "answer-line-icon")}</span>
       <i class="answer-arrow">選擇 <span>→</span></i>
     </button>`).join("");
   $("question-card").classList.remove("changing");
@@ -844,6 +844,7 @@ function characterSheetPath() {
 
 function portraitImagePath(type = resultType, gender = characterGender) {
   if (!type) return "";
+  if (type.code === "HOST") return `assets/portraits/${gender}-host-v18-2x.png`;
   return `assets/portraits/${gender}-${type.code.toLowerCase()}-2x.png`;
 }
 
@@ -875,7 +876,7 @@ function calculateResult() {
 
 function renderResult() {
   applyCharacterGender(characterGender, false);
-  document.documentElement.style.setProperty("--accent", "#E96B14");
+  document.documentElement.style.setProperty("--accent", "#F2750A");
   $("result-code").textContent = `VBTI / ${resultType.code}`;
   $("result-backdrop-code").textContent = resultType.code;
   $("portrait-caption-name").textContent = resultType.name;
@@ -913,6 +914,7 @@ function renderResult() {
     <div class="mini-type avatar-${type.code.toLowerCase()} ${type.code === resultType.code ? "active" : ""}" style="background-image:url('${portraitImagePath(type)}');background-position:center" title="${type.name}">
       <span class="mini-type-name">${type.name}</span><b class="mini-type-population">${type.population}%</b>
     </div>`).join("");
+  updateSocialShareLinks();
   renderTeamData();
 }
 
@@ -924,7 +926,7 @@ function resetQuiz() {
   finalFlavorScores = null;
   inferredBudget = null;
   choosing = false;
-  document.documentElement.style.setProperty("--accent", "#E96B14");
+  document.documentElement.style.setProperty("--accent", "#F2750A");
   renderQuestion();
   showScreen("quiz");
   track("vbti_retake");
@@ -953,6 +955,16 @@ function matchInviteUrl() {
 
 function matchInviteText() {
   return `我係「${resultType.name}」。你做埋 VBTI，睇吓我哋飲酒夾幾多，同埋會解鎖咩組隊加成：\n${matchInviteUrl()}`;
+}
+
+function updateSocialShareLinks() {
+  if (!resultType) return;
+  const url = matchInviteUrl();
+  const text = shareText();
+  const whatsapp = document.querySelector('[data-social-share="whatsapp"]');
+  const facebook = document.querySelector('[data-social-share="facebook"]');
+  if (whatsapp) whatsapp.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+  if (facebook) facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 }
 
 async function copyText(text) {
@@ -1062,26 +1074,26 @@ async function drawShareCard() {
   wash.addColorStop(1, "rgba(255,249,242,0)");
   ctx.fillStyle = wash;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.strokeStyle = "rgba(233,107,20,.07)";
+  ctx.strokeStyle = "rgba(242,117,10,.07)";
   for (let x = 0; x <= 1080; x += 90) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 1920); ctx.stroke(); }
   for (let y = 0; y <= 1920; y += 90) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1080, y); ctx.stroke(); }
-  ctx.fillStyle = "rgba(233,107,20,.075)";
+  ctx.fillStyle = "rgba(242,117,10,.075)";
   ctx.font = "800 280px Manrope, Arial";
   ctx.fillText(resultType.code, 26, 410);
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "700 25px 'Noto Sans HK', Arial";
   ctx.fillText("VBTI  /  VinoBuzz 葡萄酒口味個性", 62, 80);
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.font = "700 20px Manrope, Arial";
   ctx.fillText(`IDENTITY  /  ${resultType.code}`, 62, 148);
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "800 82px 'Noto Sans HK', Arial";
   const titleY = wrapText(ctx, resultType.name, 62, 248, 610, 88, 2);
   ctx.save();
   ctx.beginPath();
   ctx.roundRect(560, 160, 470, 620, 210);
   ctx.clip();
-  ctx.fillStyle = "rgba(233,107,20,.08)";
+  ctx.fillStyle = "rgba(242,117,10,.08)";
   ctx.fillRect(560, 160, 470, 620);
   ctx.drawImage(resultImg, 515, 115, 565, 690);
   ctx.restore();
@@ -1099,25 +1111,25 @@ async function drawShareCard() {
   ctx.beginPath();
   ctx.roundRect(62, 830, 956, 220, 28);
   ctx.fill();
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.font = "800 19px 'Noto Sans HK', Arial";
   ctx.fillText("FUN FACT / 飯局上嘅你", 96, 884);
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "800 38px 'Noto Sans HK', Arial";
   wrapText(ctx, resultType.scene, 96, 950, 850, 50, 3);
 
   // Population card
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.beginPath();
   ctx.roundRect(62, 1090, 300, 250, 28);
   ctx.fill();
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "800 18px 'Noto Sans HK', Arial";
   ctx.fillText("你呢類飲家佔", 96, 1140);
   ctx.fillStyle = "#FFFFFF";
   ctx.font = "900 82px Manrope, Arial";
   ctx.fillText(`${resultType.population}%`, 96, 1230);
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "700 19px 'Noto Sans HK', Arial";
   wrapText(ctx, `${resultType.rarity} · ${resultType.ratio}`, 96, 1280, 230, 30, 2);
 
@@ -1126,13 +1138,13 @@ async function drawShareCard() {
   ctx.beginPath();
   ctx.roundRect(390, 1090, 628, 250, 28);
   ctx.fill();
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.font = "800 18px Manrope, Arial";
   ctx.fillText("BEST DRINKING MATCH", 424, 1140);
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "800 34px 'Noto Sans HK', Arial";
   ctx.fillText(bestMatchType.name, 424, 1192);
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.font = "900 25px Manrope, Arial";
   ctx.fillText(`${bestMatch.score}% MATCH`, 424, 1232);
   ctx.fillStyle = "#625A53";
@@ -1152,13 +1164,13 @@ async function drawShareCard() {
   ctx.beginPath();
   ctx.roundRect(62, 1380, 956, 205, 28);
   ctx.fill();
-  ctx.strokeStyle = "#E96B14";
+  ctx.strokeStyle = "#F2750A";
   ctx.lineWidth = 2;
   ctx.stroke();
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.font = "800 18px 'Noto Sans HK', Arial";
   ctx.fillText(`組隊加成 / 同 ${comboType.name} 一齊`, 96, 1430);
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "800 38px 'Noto Sans HK', Arial";
   wrapText(ctx, combo.name, 96, 1485, 840, 46, 2);
   ctx.fillStyle = "#625A53";
@@ -1166,17 +1178,17 @@ async function drawShareCard() {
   wrapText(ctx, combo.ability, 96, 1540, 850, 29, 2);
 
   // Friend invitation block
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "900 38px 'Noto Sans HK', Arial";
   ctx.fillText("你同我係神隊友，定飲酒災難現場？", 62, 1685);
-  ctx.fillStyle = "#E96B14";
+  ctx.fillStyle = "#F2750A";
   ctx.font = "800 24px 'Noto Sans HK', Arial";
   ctx.fillText("做埋 VBTI，完成後即睇我哋嘅 Matching Level", 62, 1735);
   ctx.fillStyle = "#FFFFFF";
   ctx.beginPath();
   ctx.roundRect(62, 1780, 956, 82, 20);
   ctx.fill();
-  ctx.fillStyle = "#1A1A1A";
+  ctx.fillStyle = "#1F1F1F";
   ctx.font = "600 19px Manrope, Arial";
   ctx.fillText(`vbti.vinobuzz.ai/?friend=${resultType.code}`, 92, 1830);
   ctx.fillStyle = "#8F8F8F";
@@ -1220,6 +1232,15 @@ $("invite-btn").addEventListener("click", shareMatchInvite);
 $("match-share-btn").addEventListener("click", shareMatchInvite);
 $("download-btn").addEventListener("click", downloadCard);
 document.querySelectorAll(".character-choice").forEach((button) => button.addEventListener("click", () => applyCharacterGender(button.dataset.characterGender)));
+document.querySelectorAll("[data-social-share]").forEach((control) => control.addEventListener("click", async (event) => {
+  const channel = control.dataset.socialShare;
+  track("vbti_social_share_click", { type: resultType?.code, channel });
+  if (channel === "wechat") {
+    event.preventDefault();
+    await copyText(matchInviteText());
+    toast("連結已複製，可以貼去 WeChat");
+  }
+}));
 $("copy-prompt-btn").addEventListener("click", async () => {
   await copyText(noraPromptText());
   track("vbti_nora_prompt_copy", { type: resultType.code, inferred_budget: inferredBudget });
