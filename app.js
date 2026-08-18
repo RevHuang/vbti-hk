@@ -20,10 +20,10 @@ const questions = [
     title: "星期五晚，個 group 終於約得成。你通常會……",
     note: "揀一個最似你平時做法嘅答案。",
     answers: [
-      { title: "訂枱、定時間，再幫大家叫第一支酒", sub: "我通常都係負責組織嗰個。", v: { social: 95, control: 92, discovery: 62, body: 67 } },
-      { title: "準時出現就未必，但氣氛一定有我份", sub: "安排行程唔係我強項，搞氣氛就係。", v: { social: 93, control: 24, aroma: 75, discovery: 64 } },
-      { title: "提議一間大家未去過嘅新地方", sub: "我鍾意試新嘢。", v: { social: 68, discovery: 98, control: 36, aroma: 70 } },
-      { title: "留喺屋企，自己開支酒慢慢飲", sub: "安靜一晚更加吸引。", v: { social: 12, control: 65, discovery: 25, body: 60 } }
+      { title: "訂枱定時間，仲幫手叫酒", sub: "我通常都係負責組織嗰個。", v: { social: 95, control: 92, discovery: 62, body: 67 } },
+      { title: "未必準時，但一定搞氣氛", sub: "安排行程唔係我強項，搞氣氛就係。", v: { social: 93, control: 24, aroma: 75, discovery: 64 } },
+      { title: "提議一間未去過嘅餐廳", sub: "我鍾意試新嘢。", v: { social: 68, discovery: 98, control: 36, aroma: 70 } },
+      { title: "留喺屋企，開支酒慢飲", sub: "安靜一晚更加吸引。", v: { social: 12, control: 65, discovery: 25, body: 60 } }
     ]
   },
   {
@@ -64,7 +64,7 @@ const questions = [
     title: "甜品送到，你會點揀？",
     note: "呢題會幫我哋了解你平時鍾意幾甜。",
     answers: [
-      { title: "唔食甜品，芝士或者再飲一杯仲好", sub: "我通常比較鍾意鹹香味。", v: { sweet: 4, tannin: 67, body: 65, control: 72 }, f: { earthy: 86, oak: 58, spice: 48, herbal: 45 } },
+      { title: "唔食甜品，芝士或再飲一杯", sub: "我通常比較鍾意鹹香味。", v: { sweet: 4, tannin: 67, body: 65, control: 72 }, f: { earthy: 86, oak: 58, spice: 48, herbal: 45 } },
       { title: "食幾啖就夠", sub: "可以有少少甜，但唔好太多。", v: { sweet: 36, fresh: 67, body: 45 } },
       { title: "楊枝甘露或者水果甜品", sub: "甜品本身就係成餐嘅一部分。", v: { sweet: 78, body: 61, aroma: 74 }, f: { tropical: 94, stone: 72, citrus: 48, floral: 42 } },
       { title: "未睇主菜，先睇甜品餐牌", sub: "甜味對我嚟講好重要。", v: { sweet: 98, social: 62, control: 32, aroma: 82 } }
@@ -99,8 +99,8 @@ const questions = [
     answers: [
       { title: "愈凍、愈酸爽愈好", sub: "我鍾意爽脆、有活力嘅飲品。", v: { fresh: 100, body: 15, tannin: 8, sweet: 18 } },
       { title: "鍾意氣泡，但想柔和易入口", sub: "要清新，但唔好太尖銳。", v: { fresh: 72, sweet: 52, body: 32, social: 82 } },
-      { title: "間中可以，但我更鍾意順滑圓潤", sub: "我偏好柔和、飽滿啲嘅口感。", v: { fresh: 35, body: 70, sweet: 44, tannin: 35 } },
-      { title: "麻麻哋，我鍾意沉實同有酒體", sub: "清爽感對我冇咁重要。", v: { fresh: 15, body: 85, tannin: 75, control: 72 } }
+      { title: "間中可以，但更鍾意順滑", sub: "我偏好柔和、飽滿啲嘅口感。", v: { fresh: 35, body: 70, sweet: 44, tannin: 35 } },
+      { title: "麻麻哋，我鍾意沉實酒體", sub: "清爽感對我冇咁重要。", v: { fresh: 15, body: 85, tannin: 75, control: 72 } }
     ]
   },
   {
@@ -119,10 +119,10 @@ const questions = [
     title: "平時在餐廳會如何選酒？",
     note: "揀最接近你平時做法嘅答案。",
     answers: [
-      { title: "先睇食物，再揀最襯全枱餸菜嗰支", sub: "想搵一個大家都飲得開心嘅配搭。", v: { control: 78, social: 90, fresh: 58, body: 65, value: 40, care: 60 } },
-      { title: "揀一支平時少見、未試過嘅酒", sub: "去餐廳就想試啲新嘢。", v: { discovery: 98, aroma: 45, control: 45, value: 25, care: 30 } },
+      { title: "先睇食物，再揀最襯嗰支", sub: "想搵一個大家都飲得開心嘅配搭。", v: { control: 78, social: 90, fresh: 58, body: 65, value: 40, care: 60 } },
+      { title: "揀支少見、未試過嘅酒", sub: "去餐廳就想試啲新嘢。", v: { discovery: 98, aroma: 45, control: 45, value: 25, care: 30 } },
       { title: "揀熟悉、多人接受嘅穩陣款", sub: "最重要係大部分人都鍾意。", v: { discovery: 18, social: 92, sweet: 42, tannin: 35, value: 35, care: 82 } },
-      { title: "先比較價錢，再揀最抵飲嗰支", sub: "想喺成張酒牌搵到最高性價比。", v: { control: 96, discovery: 42, social: 55, value: 100, care: 35 } }
+      { title: "先格價，再揀最抵飲嗰支", sub: "想喺成張酒牌搵到最高性價比。", v: { control: 96, discovery: 42, social: 55, value: 100, care: 35 } }
     ]
   },
   {
@@ -144,7 +144,7 @@ const questions = [
       { title: "飲咗先，之後再問", sub: "我鍾意有驚喜。", v: { discovery: 100, control: 10, social: 78 } },
       { title: "聞一聞、飲一啖，估完先問", sub: "我鍾意自己慢慢拆解。", v: { discovery: 72, control: 78, aroma: 80 } },
       { title: "飲之前先問清楚係咩酒", sub: "我想知道自己杯入面係乜。", v: { discovery: 40, control: 100, tannin: 60 } },
-      { title: "等其他人試完，睇吓佢哋咩反應", sub: "我寧願避開一個唔好嘅驚喜。", v: { discovery: 5, control: 62, social: 38, sweet: 45 } }
+      { title: "等其他人試完再睇反應", sub: "我寧願避開一個唔好嘅驚喜。", v: { discovery: 5, control: 62, social: 38, sweet: 45 } }
     ]
   },
   {
@@ -153,9 +153,9 @@ const questions = [
     note: "唔使諗價錢，揀一個你覺得最舒服、最似自己嘅安排。",
     answers: [
       { title: "日式放題，選擇多又輕鬆", sub: "大家各自揀鍾意食嘅，最實際。", budget: 300, v: { value: 95, social: 78, control: 35, discovery: 30 } },
-      { title: "喺屋企食，親手煮一餐畀對方", sub: "夠用心，成晚節奏亦可以自己掌握。", budget: 500, v: { social: 68, value: 60, control: 78, care: 92, body: 55 } },
-      { title: "Steak dinner，有氣氛同儀式感", sub: "環境、服務同食物都要有返咁上下。", budget: 800, v: { body: 88, control: 75, care: 65, social: 72 } },
-      { title: "Omakase，交畀師傅安排成晚", sub: "重視完整體驗，值得就願意花多少少。", budget: 1500, v: { discovery: 85, control: 30, care: 75, aroma: 80 } }
+      { title: "喺屋企親手煮一餐", sub: "夠用心，成晚節奏亦可以自己掌握。", budget: 500, v: { social: 68, value: 60, control: 78, care: 92, body: 55 } },
+      { title: "牛扒晚餐，氣氛行先", sub: "環境、服務同食物都要有返咁上下。", budget: 800, v: { body: 88, control: 75, care: 65, social: 72 } },
+      { title: "Omakase，交畀師傅安排", sub: "重視完整體驗，值得就願意花多少少。", budget: 1500, v: { discovery: 85, control: 30, care: 75, aroma: 80 } }
     ]
   },
   {
@@ -163,10 +163,10 @@ const questions = [
     title: "飲咗幾杯之後，你通常會變成點？",
     note: "揀最常發生嗰個情況，唔使扮飲得。",
     answers: [
-      { title: "開始攬住朋友講心事，之後搵位瞓", sub: "情緒價值畀足，電量就好快用完。", typeBoost: "LAY", v: { social: 92, control: 8, care: 96, sweet: 58 } },
-      { title: "愈飲愈精神，仲想再叫成枱 Cheers", sub: "其他人想走，我先啱啱開始。", typeBoost: "VIBE", v: { social: 100, control: 12, care: 35, discovery: 62 } },
-      { title: "同平時差唔多，照樣慢慢飲", sub: "我知自己飲到邊，唔會亂嚟。", v: { social: 48, control: 86, care: 62, body: 55 } },
-      { title: "自動飲水、食嘢，夠鐘就收手", sub: "開心還開心，聽朝都要做人。", v: { social: 58, control: 96, care: 78, value: 68 } }
+      { title: "飲大咗就攬住朋友講心事", sub: "情緒價值畀足，電量就好快用完。", typeBoost: "LAY", v: { social: 92, control: 8, care: 96, sweet: 58 } },
+      { title: "愈飲愈精神，繼續乾杯", sub: "其他人想走，我先啱啱開始。", typeBoost: "VIBE", v: { social: 100, control: 12, care: 35, discovery: 62 } },
+      { title: "同平時一樣，照樣慢慢飲", sub: "我知自己飲到邊，唔會亂嚟。", v: { social: 48, control: 86, care: 62, body: 55 } },
+      { title: "飲水食嘢，夠鐘就收手", sub: "開心還開心，聽朝都要做人。", v: { social: 58, control: 96, care: 78, value: 68 } }
     ]
   }
 ];
