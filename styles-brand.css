@@ -542,3 +542,131 @@ body { color: var(--brand-black); font-size: 16px; line-height: 1.5; }
   .answer { min-height: 72px; }
   .answer strong { font-size: 14px; }
 }
+
+/* V23 — flat editorial white system. Crisp geometry replaces warm glows. */
+:root {
+  --brand-canvas: #F6F6F3;
+  --brand-surface: #FFFFFF;
+  --brand-border: #DCDCD7;
+  --brand-muted: #696965;
+  --brand-shadow: 0 1px 0 rgba(31,31,31,.03),0 10px 28px rgba(31,31,31,.055);
+}
+
+html,body { background-color: var(--brand-canvas); }
+.landing,.quiz,.result,.result-hero,.insight-grid,.all-types {
+  background-color: var(--brand-canvas) !important;
+  background-image: radial-gradient(circle,rgba(31,31,31,.055) .65px,transparent .75px) !important;
+  background-size: 14px 14px !important;
+}
+.site-header { background: rgba(255,255,255,.96); border-color: var(--brand-border); }
+.question-card,.result-hero,.panel,.all-types,.brand-intro-panel,.nora-panel {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid var(--brand-border) !important;
+  box-shadow: var(--brand-shadow) !important;
+}
+.question-card,.panel,.all-types,.brand-intro-panel,.nora-panel { border-radius: 18px; }
+.panel:hover { transform: none; box-shadow: var(--brand-shadow) !important; }
+.answer {
+  background: #fff !important;
+  border-color: var(--brand-border) !important;
+  box-shadow: 0 1px 0 rgba(31,31,31,.025) !important;
+}
+.answer::before,.answer::after { display: none; }
+.answer-visual {
+  color: var(--brand-orange);
+  background: #F8F8F5;
+  border: 1px solid #E2E2DD;
+  box-shadow: none;
+}
+.answer:is(:hover,:focus-visible,:active,.selected) {
+  color: #fff;
+  background: var(--brand-orange) !important;
+  border-color: var(--brand-orange) !important;
+  box-shadow: 0 5px 14px rgba(242,117,10,.16) !important;
+}
+.answer:is(:hover,:focus-visible,:active,.selected) .answer-visual { background: #fff; border-color: #fff; }
+.population-panel,.friend-match-panel,.combo-panel,.combo-panel[data-mode="clash"],.nora-panel {
+  color: var(--brand-black);
+  background: #fff !important;
+  background-image: none !important;
+}
+.population-number { background: #F8F8F5; border-color: var(--brand-border); }
+.combo-panel::after,.nora-panel::after { display: none; }
+.combo-lightning,.nora-orb { color: #fff; background: var(--brand-orange); box-shadow: none; }
+.squad-stage {
+  background-color: #FAFAF7 !important;
+  background-image: linear-gradient(rgba(31,31,31,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(31,31,31,.045) 1px,transparent 1px) !important;
+  background-size: 28px 28px !important;
+  border: 1px solid var(--brand-border);
+  box-shadow: none;
+}
+.squad-stage::after { display: none; }
+.squad-node {
+  background: #fff;
+  border: 1px solid var(--brand-border);
+  box-shadow: 0 5px 16px rgba(31,31,31,.07);
+  backdrop-filter: none;
+}
+.squad-node.selected { background: var(--brand-orange); box-shadow: 0 5px 16px rgba(242,117,10,.16); }
+.squad-self-avatar { box-shadow: 0 0 0 6px #fff,0 0 0 7px var(--brand-border); }
+.squad-spotlight,.squad-spotlight[data-tone="clash"] { background: #FAFAF7; border-color: var(--brand-border); transform: none; }
+.button,.character-switcher,.wine-lane,.scene,.flavor-wheel-profile { box-shadow: none !important; }
+
+@media (max-width:650px) {
+  .quiz { background-color: var(--brand-canvas) !important; }
+  .question-card { border-radius: 20px; box-shadow: 0 8px 22px rgba(31,31,31,.055) !important; }
+  .answer { min-height: 104px; border-radius: 16px; }
+  .answer:nth-child(1),.answer:nth-child(4) { background: #fff !important; }
+  .answer strong {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    font-size: 13px;
+    line-height: 1.38;
+    letter-spacing: -.01em;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  .answer-visual { width: 40px; height: 40px; border-radius: 12px; }
+
+  /* One centre hero zone and one three-card rail: no absolute overlap. */
+  .squad-stage { min-height: 520px; }
+  .squad-orbit { display: none; }
+  .squad-self {
+    top: 42px;
+    width: 124px;
+    transform: translateX(-50%);
+  }
+  .squad-self-avatar { width: 112px; height: 150px; }
+  .squad-node {
+    top: auto !important;
+    bottom: 46px !important;
+    width: 84px;
+    padding-inline: 5px;
+    transform: none !important;
+  }
+  .squad-node.node-0 { left: 10px; right: auto; }
+  .squad-node.node-1 { left: 50%; right: auto; transform: translateX(-50%) !important; }
+  .squad-node.node-2 { left: auto; right: 10px; }
+  .squad-node.selected { transform: none !important; }
+  .squad-node.node-1.selected { transform: translateX(-50%) !important; }
+  .squad-node b { font-size: 11px; }
+}
+
+/* Prevent iOS/Safari's sticky touch-hover from turning an unselected card's
+   text white while its mobile surface remains white. */
+@media (hover:none) and (pointer:coarse) {
+  .answer:hover:not(.selected) {
+    color: var(--brand-black);
+    background: #fff !important;
+    border-color: var(--brand-border) !important;
+    box-shadow: 0 1px 0 rgba(31,31,31,.025) !important;
+    transform: none;
+  }
+  .answer:hover:not(.selected) .answer-visual {
+    color: var(--brand-orange);
+    background: #F8F8F5;
+    border-color: #E2E2DD;
+  }
+}

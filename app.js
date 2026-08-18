@@ -20,10 +20,10 @@ const questions = [
     title: "星期五晚，個 group 終於約得成。你通常會……",
     note: "揀一個最似你平時做法嘅答案。",
     answers: [
-      { title: "訂枱定時間，仲幫手叫酒", sub: "我通常都係負責組織嗰個。", v: { social: 95, control: 92, discovery: 62, body: 67 } },
-      { title: "未必準時，但一定搞氣氛", sub: "安排行程唔係我強項，搞氣氛就係。", v: { social: 93, control: 24, aroma: 75, discovery: 64 } },
-      { title: "提議一間未去過嘅餐廳", sub: "我鍾意試新嘢。", v: { social: 68, discovery: 98, control: 36, aroma: 70 } },
-      { title: "留喺屋企，開支酒慢飲", sub: "安靜一晚更加吸引。", v: { social: 12, control: 65, discovery: 25, body: 60 } }
+      { title: "訂枱、定時間、叫酒", sub: "我通常都係負責組織嗰個。", v: { social: 95, control: 92, discovery: 62, body: 67 } },
+      { title: "遲到都要搞氣氛", sub: "安排行程唔係我強項，搞氣氛就係。", v: { social: 93, control: 24, aroma: 75, discovery: 64 } },
+      { title: "提議去新餐廳", sub: "我鍾意試新嘢。", v: { social: 68, discovery: 98, control: 36, aroma: 70 } },
+      { title: "留喺屋企慢慢飲", sub: "安靜一晚更加吸引。", v: { social: 12, control: 65, discovery: 25, body: 60 } }
     ]
   },
   {
