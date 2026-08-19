@@ -1182,19 +1182,19 @@ body {
   .preview-card-title strong { font-size: 31px; }
   .preview-card-portrait {
     width: min(100%,340px);
-    height: clamp(220px,32svh,275px);
+    height: clamp(220px,70vw,275px);
     border-radius: 18px;
   }
   .hero-actions { margin-top: 10px; }
 }
 
-@media (max-width:380px), (max-height:720px) {
+@media (max-width:380px) {
   .landing { padding-top: 66px; }
   .eyebrow { margin-bottom: 7px; }
   .landing h1 { margin-bottom: 7px; font-size: clamp(35px,10.2vw,42px); }
   .hero-sub strong { font-size: 14px; }
   .hero-visual { margin-top: 7px; }
-  .preview-card-portrait { height: clamp(205px,30svh,225px); }
+  .preview-card-portrait { height: clamp(205px,60vw,225px); }
   .hero-actions { margin-top: 8px; }
   #start-btn { min-height: 54px; }
   .time-note,
@@ -1221,12 +1221,12 @@ body {
   .preview-card-portrait {
     width: 100%;
     max-width: none;
-    height: clamp(290px,38svh,330px);
+    height: clamp(315px,84vw,340px);
   }
   .hero-actions { margin-top: 8px; }
 }
 
-@media (max-width:380px), (max-height:720px) {
+@media (max-width:380px) {
   .landing { padding-top: 80px; }
-  .preview-card-portrait { height: clamp(205px,31svh,225px); }
+  .preview-card-portrait { height: clamp(215px,60vw,228px); }
 }
