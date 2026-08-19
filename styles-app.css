@@ -1169,3 +1169,34 @@ body {
   .time-note { margin-top: 7px; }
   .confidence-row { margin-top: 8px; }
 }
+
+/* V42 — larger mobile character reveal without pushing the CTA below fold. */
+@media (max-width:650px) {
+  .hero-sub span { display: none; }
+  .hero-visual { margin-top: 10px; padding-inline: 0; }
+  .landing-result-card {
+    width: min(100%,370px);
+    padding: 9px;
+  }
+  .preview-card-title { margin: 6px 0 5px; }
+  .preview-card-title strong { font-size: 31px; }
+  .preview-card-portrait {
+    width: min(100%,340px);
+    height: clamp(220px,32svh,275px);
+    border-radius: 18px;
+  }
+  .hero-actions { margin-top: 10px; }
+}
+
+@media (max-width:380px), (max-height:720px) {
+  .landing { padding-top: 66px; }
+  .eyebrow { margin-bottom: 7px; }
+  .landing h1 { margin-bottom: 7px; font-size: clamp(35px,10.2vw,42px); }
+  .hero-sub strong { font-size: 14px; }
+  .hero-visual { margin-top: 7px; }
+  .preview-card-portrait { height: clamp(205px,30svh,225px); }
+  .hero-actions { margin-top: 8px; }
+  #start-btn { min-height: 54px; }
+  .time-note,
+  .confidence-row { display: none; }
+}
