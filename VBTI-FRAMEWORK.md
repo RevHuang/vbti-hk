@@ -68,7 +68,7 @@ The full wording, light humour, answer choices and numerical vectors live in `ap
 - **Share hook:** “You are happiest when the table trusts you to choose.”
 - **Nora implication:** one confident food match; dry, fuller and savoury with structure.
 
-### SNAP — 相機飲先 / The Aesthetic Pourer
+### SNAP — 手機飲先 / The Aesthetic Pourer
 
 - **Core:** social, visual, aromatic and fresh.
 - **Wine lane:** Pinot Gris / Pinot Grigio, Sauvignon Blanc, Chardonnay.
@@ -129,7 +129,7 @@ V11 separates the female/male selector from the portrait frame. The large result
 |---|---:|---|
 | VIBE 氣氛酒鬼 | 24% | Social occasion is the most common reason to drink; product analysis is secondary. |
 | DEAL 抵飲獵人 | 18% | Value confidence is a mainstream daily purchase concern. |
-| SNAP 相機飲先 | 17% | Visual and social cues are highly accessible to casual urban drinkers. |
+| SNAP 手機飲先 | 17% | Visual and social cues are highly accessible to casual urban drinkers. |
 | COZY Chill住飲 | 15% | Relaxation and familiar easy-drinking styles form a large at-home segment. |
 | GIFT 送禮神隊友 | 10% | Gifting is important but occasion-specific rather than everyday. |
 | SEEK 冷門酒探員 | 8% | Active exploration of obscure grapes and regions remains a minority behaviour. |

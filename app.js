@@ -280,7 +280,7 @@ const types = [
     prompt: "幫我揀一支有結構、適合配餐嘅酒。我鍾意乾身、酒體較豐滿、帶鹹香層次同明顯單寧嘅風格。"
   },
   {
-    code: "SNAP", name: "相機飲先", color: "#F2750A", cell: [1, 0], population: 15, rarity: "常見角色", ratio: "大約每 7 人有 1 個",
+    code: "SNAP", name: "手機飲先", color: "#F2750A", cell: [1, 0], population: 15, rarity: "常見角色", ratio: "大約每 7 人有 1 個",
     populationWhy: "好多人揀酒都會先睇酒標同賣相，所以呢類飲家幾常見。",
     proto: { body: 38, fresh: 72, tannin: 24, sweet: 44, aroma: 82, discovery: 55, social: 86, control: 34, value: 28, care: 42 },
     roast: "支酒未開，你已經睇緊酒標、酒色同現場光線。對你嚟講，好飲重要，好睇都一樣重要。",
@@ -492,14 +492,14 @@ const PAIR_BONUSES = {
   "GIFT-VIBE": { name: "人情氣氛雙開", ability: "一個照顧對象，一個照顧全場；主人家開心，成枱亦即刻熱起來。" },
   "HOST-LAY": { name: "全枱照顧模式", ability: "主理人一邊控場一邊留意躺卡水杯，真心話可以講，意外就唔使有。" },
   "HOST-SEEK": { name: "今晚特別餐牌", ability: "一個確保成枱接受，一個加入少少新意；穩陣飯局即刻多個記憶點。" },
-  "HOST-SNAP": { name: "上枱即主角", ability: "主理人揀啱場合，相機飲先搵啱角度；支酒一上枱就自然成為焦點。" },
+  "HOST-SNAP": { name: "上枱即主角", ability: "主理人揀啱場合，手機飲先搵啱角度；支酒一上枱就自然成為焦點。" },
   "HOST-VIBE": { name: "一拍板全枱 Cheers", ability: "主理人揀酒，酒鬼開咪；全枱人會自動放低電話舉杯。" },
   "LAY-SEEK": { name: "醉後真心探險", ability: "一個帶你試新酒，一個飲後講新秘密；今晚發現嘅唔止係葡萄品種。" },
-  "LAY-SNAP": { name: "醉樣自動保密", ability: "相機飲先只保留最好睇嗰張，其餘躺卡相片自動進入不公開相簿。" },
+  "LAY-SNAP": { name: "醉樣自動保密", ability: "手機飲先只保留最好睇嗰張，其餘躺卡相片自動進入不公開相簿。" },
   "LAY-VIBE": { name: "一杯變六杯警報", ability: "酒鬼每次嗌 Cheers，系統都會提醒躺卡飲水；友情保留，失控機率降低。" },
   "SEEK-SNAP": { name: "冷門打卡地圖", ability: "一個搵少人知嘅酒，一個將佢影到人人想問；冷門酒即刻有流量。" },
   "SEEK-VIBE": { name: "全酒款清場", ability: "探員乜都想試，酒鬼乜都肯飲；開咗嘅酒基本上唔會剩。" },
-  "SNAP-VIBE": { name: "Story 素材無限", ability: "酒鬼製造每個乾杯位，相機飲先全部接住；成晚唔怕冇內容。" }
+  "SNAP-VIBE": { name: "Story 素材無限", ability: "酒鬼製造每個乾杯位，手機飲先全部接住；成晚唔怕冇內容。" }
 };
 
 const MATCH_MATRIX = {
@@ -1249,7 +1249,7 @@ async function drawShareCard() {
   ctx.fillStyle = "#FFFFFF";
   ctx.textAlign = "left";
   ctx.font = "900 27px 'Noto Sans HK', Arial";
-  ctx.fillText("你係邊一種？一齊睇配對", -256, 666);
+  ctx.fillText("你係邊一種？", -256, 666);
   ctx.font = "700 18px Inter, Arial";
   ctx.fillText(`revhuang.github.io/vbti-hk/?friend=${resultType.code}`, -256, 698);
   ctx.restore();
@@ -1288,7 +1288,7 @@ $("start-btn").addEventListener("click", () => {
   choosing = false;
   renderQuestion();
   showScreen("quiz");
-  track("vbti_start", { landing_variant: "result_preview_v38" });
+  track("vbti_start", { landing_variant: "result_preview_v39" });
 });
 $("back-btn").addEventListener("click", () => { if (current > 0) { choosing = false; current -= 1; renderQuestion(); } });
 $("restart-btn").addEventListener("click", resetQuiz);
@@ -1346,7 +1346,7 @@ document.addEventListener("pointermove", (event) => {
 renderQuestion();
 
 const inviter = typeByCode(inviterCode);
-track("vbti_landing_view", { landing_variant: "result_preview_v38", invited: Boolean(inviter) });
+track("vbti_landing_view", { landing_variant: "result_preview_v39", invited: Boolean(inviter) });
 if (inviter) {
   $("friend-invite-banner").hidden = false;
   $("friend-invite-copy").textContent = `${inviter.name} 想同你驗證飲酒合拍度`;
