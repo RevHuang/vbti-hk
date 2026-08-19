@@ -1070,3 +1070,41 @@ body {
   .preview-card-foot b { font-size: 10px; }
   .preview-card-foot span { font-size: 8px; }
 }
+
+/* V40 — identity-first landing hook */
+.landing h1 {
+  max-width: 720px;
+  font-size: clamp(50px,5.2vw,76px);
+  line-height: 1.01;
+}
+.landing h1 em { max-width: 720px; }
+.hero-sub {
+  display: grid;
+  gap: 5px;
+  max-width: 610px;
+}
+.hero-sub strong {
+  color: var(--app-ink);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.45;
+  letter-spacing: -.02em;
+}
+.hero-sub span { display: block; }
+.hero-outcome { margin-top: 20px; }
+#start-btn { min-width: 310px; }
+
+@media (max-width:650px) {
+  .landing { padding-top: 30px; }
+  .landing h1 {
+    margin: 13px 0 13px;
+    font-size: clamp(38px,10.8vw,48px);
+    line-height: 1.03;
+  }
+  .hero-sub { gap: 4px; }
+  .hero-sub strong { font-size: 15px; line-height: 1.4; }
+  .hero-sub span { font-size: 13px; line-height: 1.5; }
+  .hero-outcome { margin-top: 15px; }
+  .outcome-cards article { min-height: 48px; }
+  #start-btn { min-width: 0; }
+}
