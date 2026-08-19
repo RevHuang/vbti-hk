@@ -15,11 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+HK:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=27.0">
-  <link rel="stylesheet" href="styles-artistic.css?v=27.0">
-  <link rel="stylesheet" href="styles-match.css?v=27.0">
-  <link rel="stylesheet" href="styles-brand.css?v=27.0">
-  <link rel="stylesheet" href="styles-app.css?v=27.0">
+  <link rel="stylesheet" href="styles.css?v=28.0">
+  <link rel="stylesheet" href="styles-artistic.css?v=28.0">
+  <link rel="stylesheet" href="styles-match.css?v=28.0">
+  <link rel="stylesheet" href="styles-brand.css?v=28.0">
+  <link rel="stylesheet" href="styles-app.css?v=28.0">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -121,19 +121,9 @@
           <h2 id="result-name"></h2>
           <p class="result-roast" id="result-roast"></p>
           <div class="population-pill"><strong id="result-population">24%</strong><span><b id="result-rarity">最常見角色</b><small id="result-ratio">差唔多每 4 人有 1 個</small></span></div>
-          <div class="result-actions">
-            <button class="button primary" id="share-btn">分享我嘅結果 <span>↗</span></button>
-            <button class="button invite-button" id="invite-btn">叫朋友做配對</button>
-            <button class="text-button retake" id="retake-btn">再測一次</button>
-          </div>
           </div>
 
           <div class="character-visual">
-            <div class="character-switcher" role="group" aria-label="選擇人物版本">
-              <span>揀你想顯示嘅角色</span>
-              <button type="button" class="character-choice active" data-character-gender="female" aria-pressed="true">女角色</button>
-              <button type="button" class="character-choice" data-character-gender="male" aria-pressed="false">男角色</button>
-            </div>
             <div class="result-portrait-card" id="result-portrait-card">
               <div class="portrait-halo halo-one"></div>
               <div class="portrait-halo halo-two"></div>
@@ -141,6 +131,16 @@
               <div class="portrait-stamp">VBTI<br><small>口味認證</small></div>
               <div class="portrait-caption"><span>YOUR WINE ENERGY</span><b id="portrait-caption-name"></b></div>
             </div>
+            <div class="character-switcher" role="group" aria-label="選擇人物版本">
+              <span>揀你想顯示嘅角色</span>
+              <button type="button" class="character-choice active" data-character-gender="female" aria-pressed="true">女角色</button>
+              <button type="button" class="character-choice" data-character-gender="male" aria-pressed="false">男角色</button>
+            </div>
+          </div>
+          <div class="result-actions">
+            <button class="button primary" id="share-btn">分享我嘅結果 <span>↗</span></button>
+            <button class="button invite-button" id="invite-btn">叫朋友做配對</button>
+            <button class="text-button retake" id="retake-btn">再測一次</button>
           </div>
           <div class="result-scroll-cue">向下睇完整口味檔案 <span>↓</span></div>
         </section>
@@ -204,10 +204,10 @@
             <button class="button match-share-button" id="match-share-btn">Send 畀朋友做測驗，睇吓你哋夾幾多</button>
             <div class="social-share-row match-social-row" aria-label="將朋友配對連結分享到社交平台">
               <span>直接分享配對</span>
-              <a href="#" data-social-share="whatsapp" aria-label="分享到 WhatsApp" title="WhatsApp">WA</a>
-              <a href="#" data-social-share="facebook" aria-label="分享到 Facebook" title="Facebook">f</a>
-              <a href="https://www.instagram.com/vinobuzz.hk/" target="_blank" rel="noopener" data-social-share="instagram" aria-label="前往 VinoBuzz Instagram" title="Instagram">IG</a>
-              <button type="button" data-social-share="wechat" aria-label="複製連結到 WeChat" title="WeChat">微</button>
+              <a href="#" data-social-share="whatsapp" aria-label="分享到 WhatsApp" title="WhatsApp"><img src="assets/social/whatsapp.svg" alt=""></a>
+              <a href="#" data-social-share="facebook" aria-label="分享到 Facebook" title="Facebook"><img src="assets/social/facebook.svg" alt=""></a>
+              <a href="https://www.instagram.com/vinobuzz.hk/" target="_blank" rel="noopener" data-social-share="instagram" aria-label="前往 VinoBuzz Instagram" title="Instagram"><img src="assets/social/instagram.svg" alt=""></a>
+              <button type="button" data-social-share="wechat" aria-label="複製連結到 WeChat" title="WeChat"><img src="assets/social/wechat.svg" alt=""></button>
             </div>
           </article>
 
@@ -260,6 +260,6 @@
 
   <canvas id="share-canvas" width="1080" height="1920" hidden></canvas>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=27.0"></script>
+  <script src="app.js?v=28.0"></script>
 </body>
 </html>

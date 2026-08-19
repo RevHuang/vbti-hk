@@ -912,6 +912,7 @@ function renderResult() {
   $("result-name").textContent = resultType.name;
   $("result-roast").textContent = matchMedia("(max-width: 650px)").matches ? `${resultType.roast.split("。")[0]}。` : resultType.roast;
   $("result-population").textContent = `${resultType.population}%`;
+  document.querySelector(".population-pill").style.setProperty("--population", `${resultType.population * 3.6}deg`);
   $("result-rarity").textContent = resultType.rarity;
   $("result-ratio").textContent = resultType.ratio;
   $("population-big").textContent = `${resultType.population}%`;
