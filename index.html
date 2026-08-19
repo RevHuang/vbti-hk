@@ -6,20 +6,20 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta name="theme-color" content="#F7F7F5">
-  <meta name="description" content="答 14 條互動問題，搵出你嘅 VinoBuzz Taste Identity、口味指紋同適合你嘅酒款風格。">
-  <meta property="og:title" content="VBTI — 你係邊一種葡萄酒飲家？">
-  <meta property="og:description" content="答 14 條互動問題，搵出你嘅葡萄酒個性、口味輪廓同適合你嘅酒款風格。">
+  <meta name="description" content="用 90 秒搵到你嘅命定酒：解鎖飲酒人格、個人口味指紋、3 個酒款方向同朋友配對。">
+  <meta property="og:title" content="VBTI — 90 秒，搵到你嘅命定酒">
+  <meta property="og:description" content="14 條簡單問題，即刻解鎖你嘅飲酒人格、口味指紋同 3 個最啱你嘅酒款方向。唔識酒都玩得。">
   <meta property="og:type" content="website">
-  <title>VBTI — 你嘅葡萄酒口味個性</title>
+  <title>VBTI — 90 秒搵到你嘅命定酒</title>
   <link rel="icon" href="assets/vinobuzz-logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+HK:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=36.0">
-  <link rel="stylesheet" href="styles-artistic.css?v=36.0">
-  <link rel="stylesheet" href="styles-match.css?v=36.0">
-  <link rel="stylesheet" href="styles-brand.css?v=36.0">
-  <link rel="stylesheet" href="styles-app.css?v=36.0">
+  <link rel="stylesheet" href="styles.css?v=37.0">
+  <link rel="stylesheet" href="styles-artistic.css?v=37.0">
+  <link rel="stylesheet" href="styles-match.css?v=37.0">
+  <link rel="stylesheet" href="styles-brand.css?v=37.0">
+  <link rel="stylesheet" href="styles-app.css?v=37.0">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -31,27 +31,36 @@
       <img src="assets/vinobuzz-logo.svg" alt="VinoBuzz">
       <span class="brand-product">VBTI</span>
     </a>
-    <div class="header-note">唔識酒都玩得。</div>
+    <div class="header-note">14 題 · 約 90 秒</div>
   </header>
 
   <main id="app">
     <section class="screen landing active" id="landing" aria-labelledby="hero-title">
       <div class="hero-copy">
         <div class="friend-invite-banner" id="friend-invite-banner" hidden><span>FRIEND MATCH</span><b id="friend-invite-copy"></b></div>
-        <div class="eyebrow"><span></span> 葡萄酒口味個性測試</div>
-        <h1 id="hero-title"><span>你嘅口味</span><em>都有個性。</em></h1>
-        <p class="hero-sub">答 14 條簡單問題，睇吓你飲酒時係邊一類人，仲會搵出啱你嘅酒款風格。</p>
-        <div class="hero-actions">
-          <button class="button primary" id="start-btn">搵出我嘅 VBTI <span>→</span></button>
-          <span class="time-note">大約 90 秒</span>
+        <div class="eyebrow"><span></span> VinoBuzz Taste Identity · 即時出結果</div>
+        <h1 id="hero-title"><span>90 秒，搵到</span><em>你嘅命定酒。</em></h1>
+        <p class="hero-sub">唔再企喺酒架前靠估。答 14 條生活化問題，即刻睇清自己鍾意咩、點解鍾意，同埋下次應該揀邊類酒。</p>
+        <div class="hero-outcome" aria-label="完成 VBTI 後會得到的結果">
+          <div class="outcome-heading"><span>完成後，即刻解鎖</span><small>YOUR PERSONAL WINE PROFILE</small></div>
+          <div class="outcome-cards">
+            <article><i>01</i><span><b>你嘅飲酒人格</b><small>9 種身份，睇吓邊個最似你</small></span></article>
+            <article><i>02</i><span><b>你嘅口味指紋</b><small>知道自己真正偏好，唔再亂買</small></span></article>
+            <article><i>03</i><span><b>3 個酒款方向</b><small>下次揀酒即刻有方向</small></span></article>
+          </div>
         </div>
-        <div class="proof-row">
-          <div><strong>9</strong><span>種飲酒個性</span></div>
-          <div><strong>6</strong><span>項真實味覺指標</span></div>
-          <div><strong>0</strong><span>葡萄酒知識要求</span></div>
+        <div class="hero-actions">
+          <button class="button primary" id="start-btn">開始測驗・解鎖我嘅結果 <span>→</span></button>
+          <span class="time-note">冇標準答案 · 唔需要識酒</span>
+        </div>
+        <div class="confidence-row" aria-label="測驗特點">
+          <span>✓ 即時出結果</span>
+          <span>✓ 唔使留資料</span>
+          <span>✓ 可以同朋友配對</span>
         </div>
       </div>
       <div class="hero-visual">
+        <div class="visual-kicker"><span>9 種飲酒人格</span><b>你估自己係邊個？</b></div>
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
         <div class="hero-character-grid" aria-label="9 種 VBTI 飲酒個性角色">
@@ -65,8 +74,8 @@
           <figure><img src="assets/portraits/male-vibe-2x.png" alt="氣氛酒鬼"><figcaption>氣氛酒鬼</figcaption></figure>
           <figure><img src="assets/portraits/female-lay-v19-2x.png" alt="躺卡"><figcaption>躺卡</figcaption></figure>
         </div>
-        <div class="floating-tag tag-one">你嘅口味，<br><b>一次講清。</b></div>
-        <div class="floating-tag tag-two">好玩得嚟，<br><b>真係有用。</b></div>
+        <div class="floating-tag tag-one">唔再買錯酒，<br><b>一次認清口味。</b></div>
+        <div class="floating-tag tag-two">即刻解鎖，<br><b>3 個酒款方向。</b></div>
       </div>
       <div class="personality-marquee" aria-hidden="true">
         <div>飯局主理人 · 相機飲先 · 冷門酒探員 · 酒單學霸 · Chill住飲 · 抵飲獵人 · 送禮神隊友 · 氣氛酒鬼 · 躺卡 ·</div>
@@ -260,6 +269,6 @@
 
   <canvas id="share-canvas" width="1080" height="1920" hidden></canvas>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=33.0"></script>
+  <script src="app.js?v=37.0"></script>
 </body>
 </html>

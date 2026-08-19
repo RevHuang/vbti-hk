@@ -1288,7 +1288,7 @@ $("start-btn").addEventListener("click", () => {
   choosing = false;
   renderQuestion();
   showScreen("quiz");
-  track("vbti_start");
+  track("vbti_start", { landing_variant: "outcome_v37" });
 });
 $("back-btn").addEventListener("click", () => { if (current > 0) { choosing = false; current -= 1; renderQuestion(); } });
 $("restart-btn").addEventListener("click", resetQuiz);
@@ -1346,6 +1346,7 @@ document.addEventListener("pointermove", (event) => {
 renderQuestion();
 
 const inviter = typeByCode(inviterCode);
+track("vbti_landing_view", { landing_variant: "outcome_v37", invited: Boolean(inviter) });
 if (inviter) {
   $("friend-invite-banner").hidden = false;
   $("friend-invite-copy").textContent = `${inviter.name} 想同你驗證飲酒合拍度`;
