@@ -785,3 +785,57 @@ body {
   }
   .match-share-button { width: 100%; margin-top: 12px; }
 }
+
+/* V35 — mobile result parity. Earlier mobile reductions hid approved result
+   chapters and their explanations; compact them here without deleting them. */
+@media (max-width:650px) {
+  .truth-panel,
+  .population-panel { display: block !important; }
+
+  .combo-panel {
+    display: grid !important;
+    grid-template-columns: 54px minmax(0,1fr);
+    gap: 13px;
+    align-items: center;
+    min-height: 0;
+  }
+  .combo-lightning { width: 48px; height: 48px; font-size: 30px; }
+  .combo-panel h3 { margin: 5px 0 8px; font-size: 15px; line-height: 1.4; }
+  .combo-panel h4 { font-size: 26px; line-height: 1.18; }
+  .combo-panel p { margin-bottom: 0; font-size: 12px; line-height: 1.55; }
+
+  .all-types { display: block !important; }
+  .flavor-wheel-profile > div:first-child small,
+  .flavor-wheel-profile > p,
+  .why-match { display: block; }
+  .flavor-wheel-profile > p,
+  .why-match { font-size: 11px; line-height: 1.55; }
+
+  .insight-grid .panel-heading small {
+    display: block;
+    max-width: 46%;
+    text-align: right;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .truth-panel blockquote { margin-bottom: 18px; font-size: 22px; line-height: 1.4; }
+  .scene { padding-left: 13px; }
+  .scene p { font-size: 12px; line-height: 1.55; }
+
+  .population-story {
+    grid-template-columns: 96px minmax(0,1fr);
+    gap: 13px;
+    align-items: center;
+  }
+  .population-number { width: 96px; min-height: 96px; }
+  .population-number strong { font-size: 28px; }
+  .population-story h4 { margin: 0 0 7px; font-size: 17px; line-height: 1.35; }
+  .population-story p,
+  .population-note { font-size: 10px; line-height: 1.5; }
+
+  .all-types { padding: 20px 14px; }
+  .all-types h3 { font-size: 28px; }
+  .all-types > p { margin-top: 10px; font-size: 12px; line-height: 1.55; }
+  .type-strip { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; }
+}
