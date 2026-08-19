@@ -758,3 +758,30 @@ body {
   .brand-intro-grid h4 { margin: 12px 0 5px; font-size: 17px; }
   .brand-intro-grid p { font-size: 12px; line-height: 1.55; }
 }
+
+/* V34 — screenshot annotations: centre the squad CTA, restore the supplied
+   platform colours, and give the questionnaire toolbar deliberate breathing
+   room without allowing the back label to wrap. */
+.quiz { padding-top: 116px; }
+.quiz-topline {
+  grid-template-columns: 106px minmax(0,1fr) 106px;
+  gap: 22px;
+}
+.quiz-topline .text-button { white-space: nowrap; }
+
+.match-share-button {
+  display: flex;
+  width: min(100%,520px);
+  margin: 18px auto 0;
+}
+.social-share-row img { filter: none; }
+
+@media (max-width:650px) {
+  .quiz { padding-top: 82px; }
+  .quiz-topline {
+    grid-template-columns: 36px minmax(0,1fr) 36px;
+    gap: 9px;
+    margin-inline: 4px;
+  }
+  .match-share-button { width: 100%; margin-top: 12px; }
+}
