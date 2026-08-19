@@ -658,6 +658,24 @@ body {
   transform: none;
 }
 
+/* V30: all 56 answer icons use one simple monochrome line system. */
+.answer-visual {
+  color: #1F1F1F !important;
+  background: #fff !important;
+  border: 1px solid #D7D7D4 !important;
+  box-shadow: none !important;
+}
+.answer-line-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+.answer:is(:hover,:focus-visible,:active,.selected) .answer-visual {
+  color: #1F1F1F !important;
+  background: #fff !important;
+  border-color: #fff !important;
+}
+
 @media (max-width:900px) {
   .result-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 34px 30px 42px; }
   .result-intro,.character-visual,.result-actions { grid-column: 1; grid-row: auto; }
