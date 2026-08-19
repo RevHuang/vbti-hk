@@ -658,7 +658,7 @@ body {
   transform: none;
 }
 
-/* V31: 56 answer-specific icons in one simple monochrome line system. */
+/* V32: official Tabler 24px / 2px answer icons in one monochrome system. */
 .answer-visual {
   color: #1F1F1F !important;
   background: #fff !important;
@@ -668,7 +668,7 @@ body {
 .answer-line-icon {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 2;
 }
 .answer:is(:hover,:focus-visible,:active,.selected) .answer-visual {
   color: #1F1F1F !important;
