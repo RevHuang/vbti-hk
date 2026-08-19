@@ -676,6 +676,15 @@ body {
   border-color: #fff !important;
 }
 
+/* V33 spacing audit: remove inherited editorial-page gutters from the app
+   dashboard and keep every result chapter on one deliberate rhythm. */
+.insight-grid {
+  padding: 24px 0;
+  align-items: stretch;
+}
+.insight-grid > .panel { align-self: stretch; }
+.combo-panel { padding-block: 28px; }
+
 @media (max-width:900px) {
   .result-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 34px 30px 42px; }
   .result-intro,.character-visual,.result-actions { grid-column: 1; grid-row: auto; }
@@ -689,19 +698,23 @@ body {
   #start-btn > span { right: 17px; font-size: 14px; }
   #restart-btn { min-width: 36px; }
 
-  .question-kicker { margin-bottom: 5px; }
-  .question-card h2 { margin: 5px 0 15px; font-size: clamp(29px,8.5vw,36px); line-height: 1.08; }
+  .question-card { padding: 18px 13px 14px; }
+  .question-kicker { margin-bottom: 4px; }
+  .question-card h2 { margin: 4px 0 13px; font-size: clamp(28px,8.2vw,34px); line-height: 1.08; }
+  .answers { gap: 7px; }
   .answer,.answer:nth-child(1),.answer:nth-child(4) {
-    grid-template-columns: minmax(0,1fr) 36px;
-    gap: 15px;
-    padding: 10px 12px 10px 15px;
+    min-height: 75px;
+    grid-template-columns: minmax(0,1fr) 38px;
+    gap: 13px;
+    padding: 9px 11px 9px 14px;
   }
-  .answer-visual { width: 34px; height: 34px; border-radius: 11px; }
-  .answer-line-icon { width: 18px; height: 18px; }
+  .answer-visual { width: 38px; height: 38px; border-radius: 12px; }
+  .answer-line-icon { width: 20px; height: 20px; }
 
   .result-shell { padding-top: 14px; padding-bottom: 42px; }
-  .result-hero { padding: 22px 16px 34px; gap: 14px; }
-  .result-intro { order: 1; padding: 18px 9px 12px; }
+  .result-hero { padding: 18px 14px 22px; gap: 11px; }
+  .result-intro { order: 1; padding: 14px 8px 7px; }
+  .result-roast { margin-bottom: 10px; }
   .character-visual { order: 2; display: flex; flex-direction: column; gap: 10px; }
   .result-portrait-card { order: 1; }
   .character-switcher { order: 2; }
@@ -725,10 +738,15 @@ body {
     background: #fff;
     white-space: nowrap;
   }
-  .population-pill { width: 126px; min-height: 126px; margin-top: 14px; }
+  .population-pill { width: 116px; min-height: 116px; margin-top: 11px; }
   .population-pill::before { inset: 10px; }
-  .population-pill > strong { font-size: 34px; }
-  .population-pill > span { top: calc(50% + 27px); margin: 0; }
+  .population-pill > strong { font-size: 32px; }
+  .population-pill > span { top: calc(50% + 25px); margin: 0; }
+
+  .result-portrait-card { min-height: 310px; }
+  .insight-grid { padding: 10px 0 0; }
+  .squad-stage { min-height: 350px; }
+  .combo-panel { padding-block: 17px; }
 
   /* The Nora/VinoBuzz explainer was missing on mobile. */
   .brand-intro-panel { display: block !important; padding: 20px 16px; }
