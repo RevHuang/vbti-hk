@@ -1200,3 +1200,33 @@ body {
   .time-note,
   .confidence-row { display: none; }
 }
+
+/* V43 — near edge-to-edge mobile result card as the primary hero. */
+@media (max-width:650px) {
+  .landing { padding-top: 88px; }
+  .eyebrow { display: none; }
+  .landing h1 { margin-bottom: 8px; }
+  .hero-visual {
+    width: 100vw;
+    max-width: none;
+    margin: 8px 0 0 calc(50% - 50vw);
+    padding: 18px 6px 6px;
+  }
+  .landing-result-card {
+    width: calc(100% - 12px);
+    max-width: 390px;
+    padding: 9px;
+    border-radius: 25px;
+  }
+  .preview-card-portrait {
+    width: 100%;
+    max-width: none;
+    height: clamp(290px,38svh,330px);
+  }
+  .hero-actions { margin-top: 8px; }
+}
+
+@media (max-width:380px), (max-height:720px) {
+  .landing { padding-top: 80px; }
+  .preview-card-portrait { height: clamp(205px,31svh,225px); }
+}
