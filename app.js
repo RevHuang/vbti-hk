@@ -1288,7 +1288,7 @@ $("start-btn").addEventListener("click", () => {
   choosing = false;
   renderQuestion();
   showScreen("quiz");
-  track("vbti_start", { landing_variant: "outcome_v37" });
+  track("vbti_start", { landing_variant: "result_preview_v38" });
 });
 $("back-btn").addEventListener("click", () => { if (current > 0) { choosing = false; current -= 1; renderQuestion(); } });
 $("restart-btn").addEventListener("click", resetQuiz);
@@ -1322,7 +1322,7 @@ $("copy-prompt-btn").addEventListener("click", async () => {
 });
 
 const landing = $("landing");
-const heroCharacters = document.querySelector(".hero-character-grid");
+const heroCharacters = document.querySelector(".landing-result-card");
 landing.addEventListener("pointermove", (event) => {
   if (matchMedia("(hover: none)").matches) return;
   const x = (event.clientX / innerWidth - .5) * 18;
@@ -1346,7 +1346,7 @@ document.addEventListener("pointermove", (event) => {
 renderQuestion();
 
 const inviter = typeByCode(inviterCode);
-track("vbti_landing_view", { landing_variant: "outcome_v37", invited: Boolean(inviter) });
+track("vbti_landing_view", { landing_variant: "result_preview_v38", invited: Boolean(inviter) });
 if (inviter) {
   $("friend-invite-banner").hidden = false;
   $("friend-invite-copy").textContent = `${inviter.name} 想同你驗證飲酒合拍度`;
