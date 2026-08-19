@@ -605,6 +605,10 @@ body {
 }
 .population-pill > strong,.population-pill > span { position: relative; z-index: 1; }
 .population-pill > strong {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   min-width: 0;
   padding: 0;
   color: var(--app-ink);
@@ -613,7 +617,12 @@ body {
   line-height: 1;
 }
 .population-pill > span {
-  margin-top: -44px;
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 31px);
+  width: 100%;
+  transform: translateX(-50%);
+  margin: 0;
   display: grid;
   gap: 2px;
   text-align: center;
@@ -636,6 +645,18 @@ body {
 .match-share-button:hover,.match-share-button:focus-visible { background: #1F1F1F !important; }
 .social-share-row a,.social-share-row button { overflow: hidden; padding: 0; background: #fff; }
 .social-share-row img { width: 20px; height: 20px; display: block; object-fit: contain; }
+.social-share-row img { filter: grayscale(1) contrast(1.25); }
+
+/* V29 annotated refinements. */
+.flavor-wheel-chips i { display: none !important; }
+.combo-lightning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 .06em;
+  line-height: 1;
+  transform: none;
+}
 
 @media (max-width:900px) {
   .result-hero { grid-template-columns: 1fr; grid-template-rows: auto; padding: 34px 30px 42px; }
@@ -689,7 +710,7 @@ body {
   .population-pill { width: 126px; min-height: 126px; margin-top: 14px; }
   .population-pill::before { inset: 10px; }
   .population-pill > strong { font-size: 34px; }
-  .population-pill > span { margin-top: -35px; }
+  .population-pill > span { top: calc(50% + 27px); margin: 0; }
 
   /* The Nora/VinoBuzz explainer was missing on mobile. */
   .brand-intro-panel { display: block !important; padding: 20px 16px; }

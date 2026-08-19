@@ -935,7 +935,7 @@ function renderResult() {
       <small>${level(dim, finalScores[dim])}</small>
     </div>`).join("");
   const flavorLeaders = topFlavorFamilies(finalFlavorScores);
-  $("flavor-wheel-chips").innerHTML = flavorLeaders.map((item) => `<span><i style="--strength:${item.score}%"></i>${item.label}</span>`).join("");
+  $("flavor-wheel-chips").innerHTML = flavorLeaders.map((item) => `<span>${item.label}</span>`).join("");
   $("flavor-wheel-copy").textContent = `由你對日常飲品、食物、茶同香氣嘅選擇推算；唔需要識酒先答得準。`;
   const grapeMatches = dynamicGrapes(finalScores, finalFlavorScores, resultType);
   $("wine-lanes").innerHTML = grapeMatches.map((wine) => `<span class="wine-chip">${wine}</span>`).join("");
