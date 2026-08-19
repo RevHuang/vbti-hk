@@ -198,6 +198,81 @@ const iconPaths = {
   eye: '<path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/>'
 };
 
+// V31: every answer gets a purpose-drawn icon. These are deliberately
+// literal (calendar, lemon soda, oyster, price tags, water, etc.) so the
+// visual reinforces the answer instead of acting as generic decoration.
+Object.assign(iconPaths, {
+  calendarHost: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 9h18m-13 6 2.2 2.2L16 12"/>',
+  lateParty: '<path d="M8 3h8M9 3l1 6-5 9h14l-5-9 1-6M8 13h8"/><path d="m4 5 1-2m14 3 2-1m-1 7h2"/>',
+  newRestaurant: '<path d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Z"/><path d="M9 8h6M9 11h6M10 8v6m4-6v6"/>',
+  homeWine: '<path d="m3 11 9-8 9 8M5 10v11h14V10"/><path d="M9 13h6l-.6 3a2.4 2.4 0 0 1-4.8 0L9 13Zm3 5v2"/>',
+
+  lemonSoda: '<path d="M7 7h10l-1 13H8L7 7Z"/><path d="m14 3-2 8M9 13h6M18 4a4 4 0 0 1-4 4 4 4 0 0 1 4-4Z"/>',
+  hkMilkTea: '<path d="M5 7h12v8a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5V7Z"/><path d="M17 9h1a3 3 0 0 1 0 6h-1M8 3c0 1 1 1 1 2m3-2c0 1 1 1 1 2m3-2c0 1 1 1 1 2"/>',
+  blackCoffee: '<path d="M5 8h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8Zm11 2h2a3 3 0 0 1 0 6h-2"/><path d="M8 4c1-1 2-1 3 0s2 1 3 0"/>',
+  peachTea: '<path d="M6 7h11l-1 13H7L6 7Zm2 5h7m-5-9 2 5"/><path d="M18 4c0 2-1.5 3-3 3 .1-1.8 1.1-3 3-3Z"/>',
+
+  oyster: '<path d="M4 15c1-6 5-10 8-10s7 4 8 10c-2 4-5 6-8 6s-6-2-8-6Z"/><path d="M6 15c4-2 8-2 12 0m-8 1.5c1-1 3-1 4 0"/>',
+  roastDuck: '<path d="M6 15c0-4 3-7 7-7 3 0 5 2 5 5 0 4-3 7-7 7-3 0-5-2-5-5Z"/><path d="M16 9c1-3 3-4 5-3m-2-2 2 2-2 2M4 20h16"/>',
+  pepperSteak: '<path d="M5 8c3-3 8-4 12-1 4 3 3 9-1 12-4 2-10 1-12-3-2-3-1-6 1-8Z"/><circle cx="9" cy="11" r=".7"/><circle cx="14" cy="10" r=".7"/><circle cx="12" cy="15" r=".7"/>',
+  curryHotpot: '<path d="M4 10h16v3a8 8 0 0 1-16 0v-3Zm-2 2h2m16 0h2"/><path d="M8 7c0-2 2-2 2-4m4 4c0-2 2-2 2-4"/>',
+
+  floralTea: '<path d="M5 10h13v5a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5v-5Zm13 2h1a2.5 2.5 0 0 1 0 5h-2"/><circle cx="11" cy="5" r="1.5"/><path d="M11 3v4M9 5h4"/>',
+  balancedTea: '<path d="M5 9h13v6a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5V9Z"/><path d="M8 13h7M8 16h7M8 4h8"/>',
+  strongTea: '<path d="M5 8h13v7a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5V8Z"/><path d="M7 12h9M7 15h9M9 3v3m3-3v3m3-3v3"/>',
+  milkSugarTea: '<path d="M4 10h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-6Zm12 2h2a2.5 2.5 0 0 1 0 5h-2"/><path d="m9 4 2-2 2 2-2 2-2-2Zm7 1c0 2-1 3-2 3s-2-1-2-3l2-3 2 3Z"/>',
+
+  cheeseWine: '<path d="M3 15 12 7l9 4-9 9-9-5Z"/><circle cx="12" cy="12" r="1"/><circle cx="8" cy="15" r="1"/><path d="M16 3h5l-.5 3a2 2 0 0 1-4 0L16 3Zm2.5 5v4"/>',
+  fewBites: '<path d="M4 17c4-7 9-10 16-10-1 7-5 11-12 12l-4-2Z"/><path d="m8 15 2 1m1-4 2 1m2-4 2 1"/>',
+  mangoDessert: '<path d="M4 10h16l-2 9H6l-2-9Z"/><circle cx="9" cy="13" r="1.3"/><circle cx="14" cy="15" r="1.3"/><path d="M12 10c0-3 2-5 5-5-1 3-2 5-5 5Zm0 0c0-2-1-4-3-5"/>',
+  dessertFirst: '<path d="M5 3h14v18H5V3Z"/><path d="M8 7h8m-8 10h8"/><path d="M9 13c0-2 1.3-3 3-3s3 1 3 3-1.3 3-3 3-3-1-3-3Z"/>',
+
+  citrusApple: '<circle cx="8" cy="13" r="5"/><path d="M8 8c0-2 1-3 3-4m-3 4c-2-2-3-3-5-2"/><circle cx="17" cy="12" r="4"/><path d="M17 8V5m0 0c2 0 3 1 3 2"/>',
+  berriesSpice: '<circle cx="8" cy="9" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="14" cy="11" r="2"/><path d="M10 6c1-2 3-3 5-3m1 12 4 5m-6-3 5-3"/>',
+  peachPerfume: '<path d="M8 10c-2-3 0-6 3-6 1 0 2 .5 3 1.5C15 4.5 16 4 17 4c3 0 5 3 3 6-2 3-6 5-6 5s-4-2-6-5Z"/><path d="M5 13h6v8H5v-8Zm2-3h2v3m-1-6V4m4 3h3"/>',
+  herbSmoke: '<path d="M5 19c0-7 4-12 12-14-1 8-5 12-12 14Zm1-1 8-8"/><path d="M17 20c-2-2 2-3 0-5s2-3 0-5"/>',
+
+  wineDetails: '<path d="M5 3h14v18H5V3Z"/><path d="M8 7h8m-8 4h5m-5 4h8m-8 3h5"/><circle cx="16" cy="11" r="1"/>',
+  askSommelier: '<circle cx="8" cy="7" r="3"/><path d="M3 20c.5-4 2-6 5-6s4.5 2 5 6"/><path d="M15 5h6v7h-3l-2 2v-2h-1V5Z"/>',
+  rareGlass: '<path d="M7 3h10l-1 6a4.1 4.1 0 0 1-8 0L7 3Zm5 10v7m-4 1h8"/><path d="m19 5 .6 1.4L21 7l-1.4.6L19 9l-.6-1.4L17 7l1.4-.6L19 5Z"/>',
+  valueBottle: '<path d="M9 3h6v4l2 3v11H7V10l2-3V3Zm0 4h6"/><path d="M10 13h4m-4 3h4"/><circle cx="19" cy="17" r="3"/><path d="M18 17h2"/>',
+
+  icyLemon: '<path d="M6 6h11l-1 14H7L6 6Zm3 5h5"/><path d="m12 2 .7 2.3L15 5l-2.3.7L12 8l-.7-2.3L9 5l2.3-.7L12 2Zm6 7a3 3 0 0 1-3 3 3 3 0 0 1 3-3Z"/>',
+  softBubbles: '<path d="M7 3h10l-1 6a4 4 0 0 1-8 0L7 3Zm5 10v8m-4 0h8"/><circle cx="15" cy="7" r=".7"/><circle cx="12" cy="9" r=".7"/><circle cx="18" cy="3" r="1.5"/>',
+  smoothSip: '<path d="M6 4h12l-1.2 7a5 5 0 0 1-9.6 0L6 4Zm6 12v5m-4 0h8"/><path d="M8 10c2 1 6 1 8 0"/>',
+  fullBody: '<path d="M8 3h8v4l2 4v10H6V11l2-4V3Zm0 4h8"/><path d="M6 14h12M6 18h12"/>',
+
+  knownBrand: '<path d="M8 3h8v4l2 3v11H6V10l2-3V3Zm0 4h8"/><path d="m12 11 1.3 2.6 2.7.4-2 2 .5 3-2.5-1.4L9.5 19l.5-3-2-2 2.7-.4L12 11Z"/>',
+  storyWine: '<path d="M8 3h8v4l2 3v11H6V10l2-3V3Zm0 4h8"/><path d="M9 13c1-2 5-2 6 0s-1 4-3 5c-2-1-4-3-3-5Z"/>',
+  sparklingWine: '<path d="M9 3h6v5l2 4v9H7v-9l2-4V3Zm0 5h6"/><circle cx="11" cy="13" r=".7"/><circle cx="14" cy="15" r=".7"/><circle cx="11" cy="18" r=".7"/><path d="m18 5 2-2m0 5 2-1"/>',
+  askHost: '<circle cx="8" cy="7" r="3"/><path d="M3 20c.5-4 2-6 5-6s4.5 2 5 6"/><path d="M15 5h6v8h-4l-2 2V5Zm3 2v2m0 2h.01"/>',
+
+  foodPairing: '<circle cx="8" cy="15" r="5"/><path d="M3 15h10M8 10v10"/><path d="M16 3h5l-.5 4a2 2 0 0 1-4 0L16 3Zm2.5 6v8m-2.5 0h5"/>',
+  discoverBottle: '<path d="M8 3h7v4l2 3v11H6V10l2-3V3Zm0 4h7"/><path d="m19 8 .7 2.3L22 11l-2.3.7L19 14l-.7-2.3L16 11l2.3-.7L19 8Z"/>',
+  crowdBottle: '<path d="M9 3h6v4l2 3v11H7V10l2-3V3Zm0 4h6"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><path d="M1 19c0-3 1-4 3-4s3 1 3 4m10 0c0-3 1-4 3-4s3 1 3 4"/>',
+  comparePrice: '<path d="M3 5h7l4 4-6 6-5-5V5Zm2 3h.01"/><path d="M14 11h7v9h-7v-9Zm2 3h3m-3 3h3"/>',
+
+  boldRed: '<path d="M6 3h12l-1.3 7a4.8 4.8 0 0 1-9.4 0L6 3Zm1 7h10m-5 5v6m-4 0h8"/><path d="M9 7h6"/>',
+  crispWhite: '<path d="M6 3h12l-1.3 7a4.8 4.8 0 0 1-9.4 0L6 3Zm6 12v6m-4 0h8"/><path d="m20 4 .5 1.5L22 6l-1.5.5L20 8l-.5-1.5L18 6l1.5-.5L20 4Z"/>',
+  softFruitWine: '<path d="M7 4h10l-1 6a4.1 4.1 0 0 1-8 0L7 4Zm5 10v7m-4 0h8"/><circle cx="16" cy="8" r="2"/><path d="M16 6c0-2 1-3 3-3"/>',
+  unknownBottle: '<path d="M8 3h8v4l2 3v11H6V10l2-3V3Zm0 4h8"/><path d="M10 13a2 2 0 1 1 3 1.7c-.7.4-1 .8-1 1.5m0 2h.01"/>',
+
+  drinkFirst: '<path d="M6 3h12l-1 6a5 5 0 0 1-10 0L6 3Zm6 11v7m-4 0h8"/><path d="m3 11 2 2 3-4"/>',
+  sniffTaste: '<path d="M6 3h10l-1 6a4 4 0 0 1-8 0L6 3Zm5 11v7m-4 0h8"/><path d="M18 5c2 1 2 3 0 4m2-6c3 2 3 6 0 8"/>',
+  askBefore: '<path d="M7 3h10l-1 6a4.1 4.1 0 0 1-8 0L7 3Zm5 11v7m-4 0h8"/><path d="M19 6a2 2 0 1 1 2 2c-1 0-1 .7-1 1m0 2h.01"/>',
+  watchOthers: '<path d="M2.5 11s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5Z"/><circle cx="10.5" cy="11" r="2"/><circle cx="20" cy="17" r="2"/><path d="M17 22c0-2 1-3 3-3s3 1 3 3"/>',
+
+  buffet: '<path d="M3 15h18M5 15a7 7 0 0 1 14 0M12 5V3m-2 0h4"/><path d="M7 19h10"/>',
+  homeCooking: '<path d="m3 11 9-8 9 8M5 10v11h14V10"/><path d="M9 18v-4h6v4m-8-6h10"/>',
+  steakDate: '<path d="M4 14c0-4 4-7 9-7s8 3 7 7-4 7-9 7-5-3-7-7Z"/><path d="M7 4h10M9 2v4m6-4v4"/><circle cx="12" cy="13" r="1"/>',
+  omakase: '<path d="M3 17h18M5 17a7 7 0 0 1 14 0M12 7V4"/><path d="M8 4h8m-6-2h4"/><path d="m19 6 .6 1.4L21 8l-1.4.6L19 10l-.6-1.4L17 8l1.4-.6L19 6Z"/>',
+
+  heartTalk: '<circle cx="6" cy="7" r="3"/><path d="M1 20c.5-4 2-6 5-6 2 0 3.5 1 4.3 3"/><path d="M13 6c1-2 4-2 5 0 1-2 4-2 5 0 0 3-5 6-5 6s-5-3-5-6Z"/>',
+  endlessCheers: '<path d="M3 5h7l-1 5a3 3 0 0 1-5 0L3 5Zm4 8v6m-3 0h6M14 5h7l-1 5a3 3 0 0 1-5 0l-1-5Zm3 8v6m-3 0h6"/><path d="m10 7 4 2"/>',
+  steadyDrink: '<path d="M7 3h10l-1 6a4.1 4.1 0 0 1-8 0L7 3Zm5 11v7m-4 0h8"/><path d="M9 9h6m-4-3h2"/>',
+  waterStop: '<path d="M6 5h8l-1 16H7L6 5Zm1 9h6"/><path d="M19 3c0 3-2 4-3 4s-3-1-3-4l3-3 3 3Zm-3 9v7m-2-2 2 2 2-2"/>'
+});
+
 function iconSvg(name, className = "") {
   const paths = iconPaths[name] || iconPaths.spark;
   return `<svg class="line-icon ${className}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
@@ -221,11 +296,20 @@ const stageCopies = [
   "最後睇埋你飲到中段嘅真實狀態，結果就完整。"
 ];
 const answerVisuals = [
-  ["people", "spark", "compass", "home"], ["citrus", "glass", "coffee", "flower"], ["fish", "plate", "flame", "spark"],
-  ["flower", "layers", "cup", "glass"], ["plate", "layers", "flower", "spark"], ["citrus", "diamond", "flower", "layers"],
-  ["scan", "people", "spark", "diamond"], ["spark", "glass", "bubble", "layers"], ["tag", "menu", "spark", "people"],
-  ["plate", "compass", "people", "check"], ["moon", "glass", "flower", "compass"], ["spark", "eye", "menu", "people"],
-  ["layers", "flame", "plate", "fish"], ["heart", "spark", "glass", "check"]
+  ["calendarHost", "lateParty", "newRestaurant", "homeWine"],
+  ["lemonSoda", "hkMilkTea", "blackCoffee", "peachTea"],
+  ["oyster", "roastDuck", "pepperSteak", "curryHotpot"],
+  ["floralTea", "balancedTea", "strongTea", "milkSugarTea"],
+  ["cheeseWine", "fewBites", "mangoDessert", "dessertFirst"],
+  ["citrusApple", "berriesSpice", "peachPerfume", "herbSmoke"],
+  ["wineDetails", "askSommelier", "rareGlass", "valueBottle"],
+  ["icyLemon", "softBubbles", "smoothSip", "fullBody"],
+  ["knownBrand", "storyWine", "sparklingWine", "askHost"],
+  ["foodPairing", "discoverBottle", "crowdBottle", "comparePrice"],
+  ["boldRed", "crispWhite", "softFruitWine", "unknownBottle"],
+  ["drinkFirst", "sniffTaste", "askBefore", "watchOthers"],
+  ["buffet", "homeCooking", "steakDate", "omakase"],
+  ["heartTalk", "endlessCheers", "steadyDrink", "waterStop"]
 ];
 
 // Mobile copy is intentionally editorial rather than auto-wrapped. Each item
