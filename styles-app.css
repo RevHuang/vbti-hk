@@ -1108,3 +1108,64 @@ body {
   .outcome-cards article { min-height: 48px; }
   #start-btn { min-width: 0; }
 }
+
+/* V41 — on mobile, make the result visual the hero and keep the start CTA
+   inside the first viewport. Desktop retains the V40 two-column layout. */
+@media (max-width:650px) {
+  .landing {
+    min-height: 100svh;
+    padding: 76px 0 28px;
+  }
+  #landing.active { gap: 0; }
+  .hero-copy { display: contents; }
+  .friend-invite-banner { order: 0; margin-bottom: 10px; }
+  .eyebrow { order: 1; margin-bottom: 10px; }
+  .landing h1 { order: 2; margin: 0 0 10px; }
+  .hero-sub { order: 3; }
+  .hero-visual {
+    order: 4;
+    width: 100%;
+    margin: 14px 0 0;
+    padding: 18px 10px 6px;
+    filter: drop-shadow(0 17px 32px rgba(31,31,31,.13));
+  }
+  .hero-actions { order: 5; margin: 12px 0 0; }
+  .confidence-row { order: 6; }
+  .hero-outcome { order: 7; margin-top: 24px; }
+  .personality-marquee { order: 8; }
+  .landing-footer { order: 9; }
+
+  .result-preview-label { padding: 6px 10px; }
+  .result-preview-label span,
+  .result-preview-label b { font-size: 7px; }
+  .landing-result-card {
+    width: min(100%,350px);
+    margin: 0 auto;
+    padding: 11px;
+    border-width: 2px;
+    border-radius: 23px;
+    box-shadow: 0 9px 0 rgba(31,31,31,.07),0 18px 34px rgba(31,31,31,.11);
+    transform: rotate(-.45deg);
+  }
+  .preview-card-top { min-height: 29px; padding: 0 11px; }
+  .preview-card-title { margin: 8px 0 7px; }
+  .preview-card-title small { font-size: 7px; }
+  .preview-card-title strong { margin-top: 1px; font-size: 29px; }
+  .preview-card-portrait {
+    width: min(88%,290px);
+    height: 190px;
+    aspect-ratio: auto;
+    border-radius: 17px;
+    background: var(--app-ink) url("assets/portraits/female-snap-2x.png") center bottom / contain no-repeat;
+  }
+  .preview-card-portrait img {
+    visibility: hidden;
+  }
+  .landing-result-card blockquote,
+  .preview-card-rewards,
+  .preview-card-foot { display: none; }
+
+  #start-btn { min-height: 58px; }
+  .time-note { margin-top: 7px; }
+  .confidence-row { margin-top: 8px; }
+}
